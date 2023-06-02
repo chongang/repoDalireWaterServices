@@ -8,7 +8,7 @@ $(document).ready(function() {
     };
 
     $.ajax({
-      url: "https://script.google.com/macros/s/{YOUR_SCRIPT_ID}/exec",
+      url: "https://script.google.com/macros/s/AKfycbz9wyOZaUxtE9hJb6tAK3u-TJh1qhp9OBAJBxgklA07DimIw9c-nThr9xIs9uqLDLz1WQ/exec",
       method: "GET",
       dataType: "json",
       data: formData,
