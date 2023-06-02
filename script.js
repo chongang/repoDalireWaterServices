@@ -8,13 +8,23 @@ $(document).ready(function() {
     };
     
     var url = "https://script.google.com/macros/s/AKfycbz9wyOZaUxtE9hJb6tAK3u-TJh1qhp9OBAJBxgklA07DimIw9c-nThr9xIs9uqLDLz1WQ/exec";
-    url += "?name=" + encodeURIComponent(formData.name);
-    url += "&email=" + encodeURIComponent(formData.email);
-    url += "&callback=handleResponse";
+    var params = {
+      name: formData.name,
+      email: formData.email,
+      callback: "handleResponse"
+    };
 
-    var script = document.createElement('script');
-    script.src = url;
-    document.body.appendChild(script);
+    $.ajax({
+      url: url,
+      dataType: "jsonp",
+      data: params,
+      success: function(response) {
+        handleResponse(response);
+      },
+      error: function() {
+        console.error("There was an error submitting the form. Please try again.");
+      }
+    });
   });
 });
 
