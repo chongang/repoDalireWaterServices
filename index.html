@@ -49,9 +49,11 @@
         scope: 'https://www.googleapis.com/auth/spreadsheets'
       }).then(function() {
         // API initialization succeeded
+	      alert("API initialization succeeded");	
         console.log('Google Sheets API initialized');
         form.addEventListener("submit", handleFormSubmit);
       }, function(error) {
+	      alert("API initialization failed");
         console.error('Error initializing Google Sheets API:', error);
       });
     }
