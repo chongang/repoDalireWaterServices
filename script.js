@@ -6,7 +6,7 @@ $(document).ready(function() {
       name: $('#name').val(),
       email: $('#email').val()
     };
-    
+
     var url = "https://script.google.com/macros/s/AKfycbz9wyOZaUxtE9hJb6tAK3u-TJh1qhp9OBAJBxgklA07DimIw9c-nThr9xIs9uqLDLz1WQ/exec";
     var params = {
       name: formData.name,
