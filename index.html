@@ -36,7 +36,6 @@
     // Replace with your API credentials and spreadsheet ID
     const apiKey = 'AIzaSyATxIfMaydkkFzjFUBz7uwAw-9xOLxg4yg';
     const clientId = '325341223761-pf5ti9jbtt99gkmgsqg8f6b109e85scp.apps.googleusercontent.com';
-    const clientSecret = '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';
     const spreadsheetId = '1rBaK010-FQSXAoIT6FY7nGQoawh_WPqlJFM40tnRhjU';
 
     // Load Google Sheets API and initialize client
@@ -47,7 +46,6 @@
       gapi.client.init({
         apiKey: apiKey,
         clientId: clientId,
-	clientSecret: clientSecret,
         discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
         scope: 'https://www.googleapis.com/auth/spreadsheets'
 	      alert("Initialize Complete");
