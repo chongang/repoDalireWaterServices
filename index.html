@@ -47,10 +47,10 @@
         apiKey: apiKey,
         clientId: clientId,
         discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
-        scope: 'https://www.googleapis.com/auth/spreadsheets'
+        scope: 'https://www.googleapis.com/auth/spreadsheets';
       }).then(function() {
         // API initialization succeeded
-alert("API initialization succeed");
+		alert("API initialization succeed");
         console.log('Google Sheets API initialized');
         form.addEventListener("submit", handleFormSubmit);
       }, function(error) {
