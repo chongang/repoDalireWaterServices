@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://apis.google.com/js/api.js"></script>
+  <title>My Web Form App</title>
+  
+    <link rel="stylesheet" href="ref/style.css">
+ 
+</head>
+<body>
+  <div class="container">
+    <h1>My Web Form App</h1>
+    
+    <form id="myForm" method="POST">
+      <label for="customerId">Customer ID:</label>
+      <input type="text" name="customerId" id="customerId" required>
+      
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" required>
+      
+      <label for="email">Email:</label>
+      <input type="email" name="email" id="email" required>
+      
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+  
+  <script>
+    const form = document.getElementById("myForm");
+    const customerIdInput = document.getElementById("customerId");
+    const nameInput = document.getElementById("name");
+    const emailInput = document.getElementById("email");
+
+    // Replace with your API credentials and spreadsheet ID
+    const apiKey = 'AIzaSyBqn-HbqvzfK2VOeuRPHmCzaxC9FBdYodQ';
+    const clientId = '857744830292-94d7grm79fs4h30j7rsn4ldf80rnbu60.apps.googleusercontent.com';
+    const spreadsheetId = '1rBaK010-FQSXAoIT6FY7nGQoawh_WPqlJFM40tnRhjU';
+
+    // Load Google Sheets API and initialize client
+    gapi.load('client', initClient);
+
+    function initClient() {
+      gapi.client.init({
+        apiKey: apiKey,
+        clientId: clientId,
+        discoveryDocs: ['https://sheets.googleapis.com/$discovery/rest?version=v4'],
+        scope: 'https://www.googleapis.com/auth/spreadsheets'
+      }).then(function() {
+        // API initialization succeeded
+        console.log('Google Sheets API initialized');
+        form.addEventListener("submit", handleFormSubmit);
+      }, function(error) {
+        console.error('Error initializing Google Sheets API:', error);
+      });
+    }
+
+    // Handle form submission
+    function handleFormSubmit(event) {
+	alert("ddsad");	
+      event.preventDefault();
+      const customerId = customerIdInput.value;
+      const name = nameInput.value;
+      const email = emailInput.value;
+
+      // Append form data to the Google Sheet
+      const params = {
+        spreadsheetId: spreadsheetId,
+        range: 'Sheet1!A:C',
+        valueInputOption: 'USER_ENTERED',
+        resource: {
+          values: [[customerId, name, email]]
+        }
+      };
+
+      gapi.client.sheets.spreadsheets.values.append(params)
+        .then(function(response) {
+          console.log('Form data appended successfully');
+          form.reset();
+          showMessage("Form data submitted successfully!", true);
+        }, function(error) {
+          console.error('Error appending form data:', error);
+          showMessage("An error occurred. Please try again later.", false);
+        });
+		
+		function showMessage(message, isSuccess) {
+			messageBox.textContent = message;
+			messageBox.style.color = isSuccess ? "green" : "red";
+}
+    }
+  </script>
+</body>
+</html>
