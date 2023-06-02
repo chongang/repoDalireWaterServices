@@ -8,15 +8,12 @@ $(document).ready(function() {
     };
 
     var url = "https://script.google.com/macros/s/AKfycbz9wyOZaUxtE9hJb6tAK3u-TJh1qhp9OBAJBxgklA07DimIw9c-nThr9xIs9uqLDLz1WQ/exec";
-    var params = {
-      name: formData.name,
-      email: formData.email
-    };
+    url += "?name=" + encodeURIComponent(formData.name);
+    url += "&email=" + encodeURIComponent(formData.email);
 
     $.ajax({
       url: url,
       dataType: "json",
-      data: params,
       success: function(response) {
         handleResponse(response);
       },
@@ -26,4 +23,5 @@ $(document).ready(function() {
     });
   });
 });
+
 
