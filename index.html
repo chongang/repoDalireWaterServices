@@ -42,6 +42,7 @@
     gapi.load('client', initClient);
 
     function initClient() {
+	    alert("Initializing Client");	
       gapi.client.init({
         apiKey: apiKey,
         clientId: clientId,
@@ -60,7 +61,7 @@
 
     // Handle form submission
     function handleFormSubmit(event) {
-	alert("ddsad");	
+	alert("1");	
       event.preventDefault();
       const customerId = customerIdInput.value;
       const name = nameInput.value;
