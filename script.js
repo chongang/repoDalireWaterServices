@@ -10,8 +10,7 @@ $(document).ready(function() {
     var url = "https://script.google.com/macros/s/AKfycbz9wyOZaUxtE9hJb6tAK3u-TJh1qhp9OBAJBxgklA07DimIw9c-nThr9xIs9uqLDLz1WQ/exec";
     var params = {
       name: formData.name,
-      email: formData.email,
-      callback: "handleResponse"
+      email: formData.email
     };
 
     $.ajax({
@@ -28,12 +27,3 @@ $(document).ready(function() {
   });
 });
 
-
-function handleResponse(response) {
-  if (response.success) {
-    alert("Form submitted successfully!");
-    $('#myForm')[0].reset(); // Reset the form after successful submission
-  } else {
-    console.error("There was an error submitting the form. Please try again.");
-  }
-}
