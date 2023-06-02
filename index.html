@@ -14,37 +14,10 @@
 <body>
 	
 	<div class="container">
-	<script>
-	      var client;
-	      var access_token;
-
-	      function initClient() {
-		client = google.accounts.oauth2.initTokenClient({
-		  client_id: 'YOUR_CLIENT_ID',
-		  scope: 'https://www.googleapis.com/auth/calendar.readonly \
-			  https://www.googleapis.com/auth/contacts.readonly',
-		  callback: (tokenResponse) => {
-		    access_token = tokenResponse.access_token;
-		  },
-		});
-	      }
-	      function getToken() {
-		client.requestAccessToken();
-	      }
-	      function revokeToken() {
-		google.accounts.oauth2.revoke(access_token, () => {console.log('access token revoked')});
-	      }
-	      function loadCalendar() {
-		var xhr = new XMLHttpRequest();
-		xhr.open('GET', 'https://www.googleapis.com/calendar/v3/calendars/primary/events');
-		xhr.setRequestHeader('Authorization', 'Bearer ' + access_token);
-		xhr.send();
-	      }
-    </script>
-    <h1>Google Identity Services Authorization Token model</h1>
-    <button onclick="getToken();">Get access token</button><br><br>
-    <button onclick="loadCalendar();">Load Calendar</button><br><br>
-    <button onclick="revokeToken();">Revoke token</button>
+	    <h1>Google Identity Services Authorization Token model</h1>
+	    <button onclick="getToken();">Get access token</button><br><br>
+	    <button onclick="loadCalendar();">Load Calendar</button><br><br>
+	    <button onclick="revokeToken();">Revoke token</button>
 	</div>
 	
 	
@@ -65,15 +38,6 @@
     </form>
   </div>
 	
-	<!--
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <div id="g_id_onload"
-         data-client_id="325341223761-pf5ti9jbtt99gkmgsqg8f6b109e85scp.apps.googleusercontent.com"
-         data-callback="handleCredentialResponse">
-    </div>
-    <div class="g_id_signin" data-type="standard"></div>
-	-->
-	
   <script>
     const form = document.getElementById("myForm");
     const customerIdInput = document.getElementById("customerId");
@@ -86,8 +50,8 @@
     const spreadsheetId = '1rBaK010-FQSXAoIT6FY7nGQoawh_WPqlJFM40tnRhjU';
 
     // Load Google Sheets API and initialize client
-    gapi.load('client', initClient);
-
+    //gapi.load('client', initClient);
+/**
     function initClient() {
 	    alert("Initializing Client");	
       gapi.client.init({
@@ -105,7 +69,22 @@
         console.error('Error initializing Google Sheets API:', error);
       });
     }
+	 **/
+	  
+      var client;
+      var access_token;
 
+      function initClient() {
+        client = google.accounts.oauth2.initTokenClient({
+          client_id: 'YOUR_CLIENT_ID',
+          scope: 'https://www.googleapis.com/auth/calendar.readonly \
+                  https://www.googleapis.com/auth/contacts.readonly',
+          callback: (tokenResponse) => {
+            access_token = tokenResponse.access_token;
+          },
+        });
+      }
+      
     // Handle form submission
     function handleFormSubmit(event) {
 	alert("handling Form Submit");	
