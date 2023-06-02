@@ -16,7 +16,7 @@ $(document).ready(function() {
 
     $.ajax({
       url: url,
-      dataType: "jsonp",
+      dataType: "json",
       data: params,
       success: function(response) {
         handleResponse(response);
@@ -27,6 +27,7 @@ $(document).ready(function() {
     });
   });
 });
+
 
 function handleResponse(response) {
   if (response.success) {
