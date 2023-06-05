@@ -10,23 +10,23 @@ alert("completed document");
     var url = "https://script.google.com/macros/s/AKfycbxJyekpyzvZyG_mhp5Rjc2hw_mEauEbpN8GOfgLC70TN74pjJpqFWd-D_U7nfnewu7biA/exec";
     //url += "?name=" + encodeURIComponent(formData.name);
     //url += "&email=" + encodeURIComponent(formData.email);
-alert("completed var formdata");
+//alert("completed var formdata");
     var params = {
       name: formData.name,
       email: formData.email,
       callback: "handleResponse"
     };
-alert("completed var params");
+//alert("completed var params");
     $.ajax({
       url: url,
       dataType: "json",
       success: function(response) {
         handleResponse(response);
-        alert("completed var ajax");
+        //alert("completed var ajax");
       },
       error: function() {
         console.error("There was an error submitting the form. Please try again.");
-        alert("fail var ajax");
+        //alert("fail var ajax");
       }
     });
   });
