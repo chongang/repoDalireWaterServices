@@ -8,14 +8,16 @@ alert("completed document");
     };
 
     var url = "https://script.google.com/macros/s/AKfycbxJyekpyzvZyG_mhp5Rjc2hw_mEauEbpN8GOfgLC70TN74pjJpqFWd-D_U7nfnewu7biA/exec";
-    //url += "?name=" + encodeURIComponent(formData.name);
-    //url += "&email=" + encodeURIComponent(formData.email);
+    url += "?name=" + encodeURIComponent(formData.name);
+    url += "&email=" + encodeURIComponent(formData.email);
+    
 //alert("completed var formdata");
-    var params = {
-      name: formData.name,
-      email: formData.email,
-      callback: "handleResponse"
-    };
+//    var params = {
+   //   name: formData.name,
+   //   email: formData.email,
+ //     callback: "handleResponse"
+ //   };
+    
 //alert("completed var params");
     $.ajax({
       url: url,
