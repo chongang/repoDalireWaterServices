@@ -8,9 +8,15 @@ $(document).ready(function() {
     };
 
     var url = "https://script.google.com/macros/s/AKfycbxJyekpyzvZyG_mhp5Rjc2hw_mEauEbpN8GOfgLC70TN74pjJpqFWd-D_U7nfnewu7biA/exec";
-    url += "?name=" + encodeURIComponent(formData.name);
-    url += "&email=" + encodeURIComponent(formData.email);
-
+    //url += "?name=" + encodeURIComponent(formData.name);
+    //url += "&email=" + encodeURIComponent(formData.email);
+    
+    var params = {
+      name: formData.name,
+      email: formData.email,
+      callback: "handleResponse"
+    };
+    
     $.ajax({
       url: url,
       dataType: "json",
