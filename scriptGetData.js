@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  google.script.run.withSuccessHandler(populateInputBox).getDataFromSheet();
+  google.script.run.withSuccessHandler(getAccount).getAccount();
 });
 
 function getAccount(data) {
