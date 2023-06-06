@@ -1,6 +1,8 @@
 <script>
   function getValue() {
-    google.script.run.withSuccessHandler(setValue).getAccount(document.getElementById('accntno').value);
+    var id = document.getElementById('accntno').value;
+    alert(id);
+    google.script.run.withSuccessHandler(setValue).getAccount(id);
   }
   
   function setValue(value) {
