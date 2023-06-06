@@ -14,6 +14,7 @@ $(document).ready(function() {
       url: url,
       type: 'POST',
       data: {
+        function: 'getAccount',
         id: id
       },
       success: function(value) {
