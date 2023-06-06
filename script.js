@@ -38,6 +38,11 @@ function handleResponse(response) {
   
   
   // GET DATA
+  $('#getaccount').click(function() {
+    var id = $('#accntno').val();
+    alert(id);
+    getValueFromSheet(id);
+  });
   
     function getValueFromSheet(id) {
       var url = "https://script.google.com/macros/s/AKfycbxJyekpyzvZyG_mhp5Rjc2hw_mEauEbpN8GOfgLC70TN74pjJpqFWd-D_U7nfnewu7biA/exec";
@@ -49,23 +54,19 @@ function handleResponse(response) {
       },
       success: function(value) {
         setValue(value);
+        alert("get data, success");
       },
       error: function(error) {
         console.log('Error:', error);
+        alert("get data, failed");
       }
     });
   }
   
   function setValue(value) {
     // Update the necessary field with the retrieved value
+    alert("get data, set value");
     $('#name').val(value);
   }
-  
-  // Modify your existing code to call getValueFromSheet() where needed
-  
-  // Example usage:
-  $('#getaccount').click(function() {
-    var id = $('#accntno').val();
-    getValueFromSheet(id);
-  });
+
 }
