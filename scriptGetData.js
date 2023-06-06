@@ -1,4 +1,4 @@
-<script>
+$(document).ready(function() {
   function getValue() {
     var id = document.getElementById('accntno').value;
     alert(id);
@@ -8,4 +8,4 @@
   function setValue(value) {
     document.getElementById('name').value = value;
   }
-</script>
+}
