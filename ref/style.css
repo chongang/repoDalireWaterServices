@@ -135,3 +135,42 @@ textarea{
       display: block;
     }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: Arial, sans-serif;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ebebeb;
+}
+
+table th {
+  background-color: #f7f7f7;
+  font-weight: bold;
+}
+
+table tr:hover {
+  background-color: #f2f2f2;
+}
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
