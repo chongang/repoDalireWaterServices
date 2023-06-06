@@ -11,13 +11,6 @@ alert("completed document");
     url += "?name=" + encodeURIComponent(formData.name);
     url += "&email=" + encodeURIComponent(formData.email);
     
-//alert("completed var formdata");
-  //  var params = {
- //     name: formData.name,
-  //    email: formData.email,
-  //    callback: "handleResponse"
-  //  };
-    
 //alert("completed var params");
     $.ajax({
       url: url,
@@ -43,4 +36,36 @@ function handleResponse(response) {
     console.error("There was an error submitting the form. Please try again.");
   }
   
+  
+  // GET DATA
+  
+    function getValueFromSheet(id) {
+      var url = "https://script.google.com/macros/s/AKfycbxJyekpyzvZyG_mhp5Rjc2hw_mEauEbpN8GOfgLC70TN74pjJpqFWd-D_U7nfnewu7biA/exec";
+    $.ajax({
+      url: url,
+      type: 'POST',
+      data: {
+        id: id
+      },
+      success: function(value) {
+        setValue(value);
+      },
+      error: function(error) {
+        console.log('Error:', error);
+      }
+    });
+  }
+  
+  function setValue(value) {
+    // Update the necessary field with the retrieved value
+    $('#name').val(value);
+  }
+  
+  // Modify your existing code to call getValueFromSheet() where needed
+  
+  // Example usage:
+  $('#getaccount').click(function() {
+    var id = $('#accntno').val();
+    getValueFromSheet(id);
+  });
 }
