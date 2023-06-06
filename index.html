@@ -26,27 +26,30 @@
 
       
         <ul class="tab-navigation">
-          <li><a href="#" onclick="showTab('tab1')" class="tab-link active">Tab 1</a></li>
-          <li><a href="#" onclick="showTab('tab2')" class="tab-link">Tab 2</a></li>
-          <li><a href="#" onclick="showTab('tab3')" class="tab-link">Tab 3</a></li>
+          <li><a href="#" onclick="showTab('tab1')" class="tab-link active">Reading</a></li>
+          <li><a href="#" onclick="showTab('tab2')" class="tab-link">Billing</a></li>
+          <li><a href="#" onclick="showTab('tab3')" class="tab-link">Account</a></li>
         </ul>
       
         <div id="tab1" class="tab-content">
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" required>
+
           <label for="input1">Input 1:</label>
           <input type="text" id="input1" name="input1">
           
         </div>
 
         <div id="tab2" class="tab-content">
-          <label for="input2">Input 2:</label>
+          <label for="input2">Billing</label>
           <input type="text" id="input2" name="input2">
         </div>
 
         <div id="tab3" class="tab-content">
-          <label for="input3">Input 3:</label>
-          <input type="text" id="input3" name="input3">
+          <label for="input3">Address:</label>
+            <textarea id="address" name="address" placeholder="B11 L2 PInagsama Vill, Ph1, Taguig City" maxlength="200" rows="4" cols="50" disabled></textarea>
+          <label for="contactno">Contact No.:</label>
+            <input type="text" id="contactno" name="contactno" inputmode="numeric"  maxlength="11" disabled>09212345678</input>
+          <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>account@gmail.com</input>
         </div>
     </form>
       
