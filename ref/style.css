@@ -1,3 +1,11 @@
+@media (max-width: 768px) {
+  /* Styles for mobile devices */
+}
+
+@media (min-width: 769px) {
+  /* Styles for desktop devices */
+}
+
 /* Reset default styles ref/style.css*/
 * {
   box-sizing: border-box;
