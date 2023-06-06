@@ -64,6 +64,11 @@ input[type="submit"] {
   cursor: pointer;
 }
 
+textarea{
+ flex: 1;
+ resize: none; 
+}
+
 /* Message box styles */
 #messageBox {
   margin-top: 10px;
