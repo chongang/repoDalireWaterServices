@@ -61,7 +61,7 @@ alert("completed document");
       }
     });
   });
-});
+
 
  //SET DATA
   $('#myAccountForm').submit(function(event) {
