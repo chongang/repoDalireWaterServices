@@ -9,16 +9,43 @@
     <div class="container">
     <h1>Form Submission</h1>
     <form id="myForm">
-      
-      <label for="AcctNumber">Name:</label>
-      <input type="text" id="AcctNumber" name="Account" required><br><br>
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required><br><br>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required><br><br>
 
+        <ul class="tab-navigation">
+          <li><a href="#" onclick="showTab('tab1')">Tab 1</a></li>
+          <li><a href="#" onclick="showTab('tab2')">Tab 2</a></li>
+          <li><a href="#" onclick="showTab('tab3')">Tab 3</a></li>
+        </ul>
+
+        <div id="tab1" class="tab-content">
+          <h2>Tab 1</h2>
+          <label for="input1">Input 1:</label>
+          <input type="text" id="input1" name="input1">
+              <label for="AcctNumber">Name:</label>
+              <input type="text" id="acctNumber" name="account" required><br><br>
+
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name" required><br><br>
+
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required><br><br>
+
+              <input type="submit" value="Submit">
+        </div>
+
+        <div id="tab2" class="tab-content">
+          <!-- Tab 2 content -->
+          <h2>Tab 2</h2>
+          <label for="input2">Input 2:</label>
+          <input type="text" id="input2" name="input2">
+        </div>
+
+        <div id="tab3" class="tab-content">
+          <!-- Tab 3 content -->
+          <h2>Tab 3</h2>
+          <label for="input3">Input 3:</label>
+          <input type="text" id="input3" name="input3">
+        </div>
       
-      <input type="submit" value="Submit">
     </form>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
