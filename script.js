@@ -43,15 +43,4 @@ function handleResponse(response) {
     console.error("There was an error submitting the form. Please try again.");
   }
   
-  //Get data
-  function getValue() {
-    var id = document.getElementById('accntno').value;
-    alert(id);
-    google.script.run.withSuccessHandler(setValue).getAccount(id);
-  }
-  
-  function setValue(value) {
-    document.getElementById('name').value = value;
-  }
-  
 }
