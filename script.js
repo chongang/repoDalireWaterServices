@@ -39,6 +39,7 @@ function handleResponse(response) {
   
   // GET DATA
   $('#getaccount').click(function() {
+    alert("get account is pressed!");
     var id = $('#accntno').val();
     alert(id);
     getValueFromSheet(id);
