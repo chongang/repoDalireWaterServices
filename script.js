@@ -77,6 +77,10 @@ alert("completed document");
     $.ajax({
       url: url,
       dataType: "json",
+      data: {
+        function: 'getAccount',
+        id: id
+      },
       success: function(response) {
         handleResponse(response);
       },
