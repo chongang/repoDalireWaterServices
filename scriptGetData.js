@@ -1,8 +1,9 @@
-$(document).ready(function() {
-  google.script.run.withSuccessHandler(setAccount).getAccount();
-});
-
-function setAccount(data) {
-  var value = data[0][0]; // Adjust the index based on your data structure
-  $('#name').val(value);
-}
+<script>
+  function getValue() {
+    google.script.run.withSuccessHandler(setValue).getAccount(document.getElementById('inputId').value);
+  }
+  
+  function setValue(value) {
+    document.getElementById('inputId').value = value;
+  }
+</script>
