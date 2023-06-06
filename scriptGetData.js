@@ -8,4 +8,4 @@ $(document).ready(function() {
   function setValue(value) {
     document.getElementById('name').value = value;
   }
-}
+});
