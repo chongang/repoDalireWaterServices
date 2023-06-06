@@ -4,5 +4,5 @@ $(document).ready(function() {
 
 function getAccount(data) {
   var value = data[0][0]; // Adjust the index based on your data structure
-  $('#myInput').val(value);
+  $('#name').val(value);
 }
