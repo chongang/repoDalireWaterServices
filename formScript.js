@@ -22,14 +22,16 @@ function calcCBM(){
  var curmonth = document.getElementById("curmonth").value;
  var prvmonth = document.getElementById("prvmonth").value;
   
-  alert("cbmrate:" + cbmrate);
-  alert("curmonth:" + curmonth);
-  alert("prvmonth:" + prvmonth);
+//  alert("cbmrate:" + cbmrate);
+//  alert("curmonth:" + curmonth);
+//  alert("prvmonth:" + prvmonth);
+  
   //calculate
  var cbm = (curmonth-prvmonth)
  var cost = (cbm*cbmrate)
- alert("cbm:" + cbm);
-  alert("cost:" + cost);
+ 
+ //alert("cbm:" + cbm);
+  //alert("cost:" + cost);
  //set values
   document.getElementById("cbm").value = cbm;
   document.getElementById("cost").value = cost;
