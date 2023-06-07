@@ -26,14 +26,7 @@ alert("action: " + action + " is clicked");
       url: url,
       dataType: "jsonp",
       success: function(response) {
-            var result = JSON.parse(response);
-          console.log(result);
-
-        var name = result.Name;
-        var contactno = result.Contactno;
-        var address = result.Address;
-         alert("name" + ": " + name);
-        handleResponse();
+        handleResponse(response);
       },
       error: function() {
         console.error("There was an error submitting the form. Please try again.");
@@ -43,14 +36,14 @@ alert("action: " + action + " is clicked");
   });
 });
 
-function handleResponse() {
+function handleResponse(response) {
   // Your code here to handle the response
  
 
   
-//  Object.entries(response).forEach(function([key, value]) {
- //   alert(key + ": " + value);
- // });
+  Object.entries(response).forEach(function([key, value]) {
+    alert(key + ": " + value);
+  });
 
   // Reset the form after successful submission
   $('#myForm')[0].reset();
