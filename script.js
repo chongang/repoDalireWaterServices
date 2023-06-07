@@ -1,17 +1,19 @@
 $(document).ready(function() {
-  //$('#myForm').submit(function(event) 
-  $("#doSet").click(function(event){
+  $("#myForm").on("submit",function(event){
     event.preventDefault(); // Prevent the form from submitting normally
-alert("completed document");
+
+    var clickedButton = $(document.activeElement);
+    var action = clickedButton.data("action");
+    
+    
+alert("action: " + action + "clicked");
+    
     var formData = {
       name: $('#name').val(),
       email: $('#email').val()
     };
-
-    var url = "https://script.google.com/macros/s/AKfycbxJyekpyzvZyG_mhp5Rjc2hw_mEauEbpN8GOfgLC70TN74pjJpqFWd-D_U7nfnewu7biA/exec";
-    //url += "?name=" + encodeURIComponent(formData.name);
-    //url += "&email=" + encodeURIComponent(formData.email);
     
+    var url = "https://script.google.com/macros/s/AKfycbxJyekpyzvZyG_mhp5Rjc2hw_mEauEbpN8GOfgLC70TN74pjJpqFWd-D_U7nfnewu7biA/exec"; 
     url += "?function=" + "doSet";
     url += "&" + $.param(formData);
 
@@ -21,11 +23,9 @@ alert("completed document");
       dataType: "json",
       success: function(response) {
         handleResponse(response);
-        //alert("completed var ajax");
       },
       error: function() {
         console.error("There was an error submitting the form. Please try again.");
-        //alert("fail var ajax");
       }
     });
   });
