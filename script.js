@@ -42,7 +42,7 @@ function handleResponse(response) {
   if (response.success) {
        var keys = Object.keys(response);
           keys.forEach(function(key) {
-            alert(key + ": " + obj[key]);
+            alert(key + ": " + response[key]);
           });
     
     //alert("Form submitted successfully! " + response);
