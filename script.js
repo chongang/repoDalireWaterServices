@@ -44,39 +44,5 @@ function handleResponse(response) {
   } else {
     console.error("There was an error submitting the form. Please try again.");
   }
-  
-  
-  // GET DATA
-  $('#getaccount').click(function() {
-    alert("get account is pressed!");
-    var id = $('#accntno').val();
-    alert(id);
-    getValueFromSheet(id);
-  });
-  
-    function getValueFromSheet(id) {
-      var url = "https://script.google.com/macros/s/AKfycbxJyekpyzvZyG_mhp5Rjc2hw_mEauEbpN8GOfgLC70TN74pjJpqFWd-D_U7nfnewu7biA/exec";
-    $.ajax({
-      url: url,
-      type: 'POST',
-      data: {
-        id: id
-      },
-      success: function(value) {
-        setValue(value);
-        alert("get data, success");
-      },
-      error: function(error) {
-        console.log('Error:', error);
-        alert("get data, failed");
-      }
-    });
-  }
-  
-  function setValue(value) {
-    // Update the necessary field with the retrieved value
-    alert("get data, set value");
-    $('#name').val(value);
-  }
 
 }
