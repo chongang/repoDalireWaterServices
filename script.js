@@ -16,7 +16,7 @@ alert("action: " + action + " is clicked");
       cbmrate: $('#cbmrate').val(),
       cbm: $('#cbm').val(),
       cost: $('#cost').val(),
-      cbm: $('#date').val(),
+      date: $('#date').val(),
       contactno: $('#contactno').val(),
       email: $('#email').val(),
       address: $('#address').val()
