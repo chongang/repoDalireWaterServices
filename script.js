@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  $('#myForm').submit(function(event) {
+  //$('#myForm').submit(function(event) 
+  $("#doSet").click(function(event){
     event.preventDefault(); // Prevent the form from submitting normally
 alert("completed document");
     var formData = {
