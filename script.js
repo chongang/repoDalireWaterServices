@@ -40,9 +40,14 @@ alert("action: " + action + " is clicked");
 function handleResponse(response) {
   // Your code here to handle the response
   alert(response);
-  Object.entries(response).forEach(function([key, value]) {
-    alert(key + ": " + value);
-  });
+  var name = response.Name,
+  var contactno = response.Contactno,
+  var address = response.Address
+   alert("address" + ": " + address);
+  
+//  Object.entries(response).forEach(function([key, value]) {
+ //   alert(key + ": " + value);
+ // });
 
   // Reset the form after successful submission
   $('#myForm')[0].reset();
