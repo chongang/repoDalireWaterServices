@@ -15,3 +15,18 @@ function showTab(tabName) {
   document.getElementById(tabName).classList.add('active');
   event.currentTarget.classList.add('active');
 }
+
+function calcCBM(){
+  // get values
+ var cbmrate = document.getElementById("cbmrate").value;
+ var curmonth = document.getElementById("curmonth").value;
+ var prvmonth = document.getElementById("cbmrate").value;
+  
+  //calculate
+ var cbm = (curmonth-prvmonth)
+ var cost = (cbm*cbmrate)
+ 
+ //set values
+  document.getElementById("cbm").value = cbm;
+  document.getElementById("cost").value = cost;
+}
