@@ -47,10 +47,6 @@ label {
   font-weight: bold;
 }
 
-tr{
-  display: flex;
-}
-
 input[type="text"],
 input[type="email"] {
   padding: 10px;
