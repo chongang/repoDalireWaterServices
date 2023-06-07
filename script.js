@@ -13,6 +13,10 @@ alert("action: " + action + " is clicked");
       name: $('#name').val(),
       prvmonth: $('#prvmonth').val(),
       curmonth: $('#curmonth').val(),
+      cbmrate: $('#cbmrate').val(),
+      cbm: $('#cbm').val(),
+      cost: $('#cost').val(),
+      cbm: $('#date').val(),
       contactno: $('#contactno').val(),
       email: $('#email').val(),
       address: $('#address').val()
