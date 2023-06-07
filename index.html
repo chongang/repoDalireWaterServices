@@ -26,14 +26,11 @@
      </h1>
       
     <form id="myForm">
-          <label for="accntno">Account No:</label>
-          <input type="text" id="accntno" inputmode="numeric" name="accntno" required>
-          <button type="submit" id="getAccount" data-action="getAccount" type="button" >Open account</button>
-      <br><br>
-      
+
       <label for="meternumber">Meter No.:</label>
       <input type="text" id="meternumber" inputmode="numeric"  maxlength="7"/>
-
+      <button type="submit" id="getAccount" data-action="getAccount" type="button" >Open account</button>
+      
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
 
@@ -113,6 +110,14 @@
                 <th>
                   Value
                 </th>
+              </tr>
+              <tr>
+                <td>
+                    <label for="accntno">Account No:</label>
+                </td>
+                <td>
+                   <input type="text" id="accntno" inputmode="numeric" name="accntno">
+                </td>
               </tr>
               <tr>
                 <td>
