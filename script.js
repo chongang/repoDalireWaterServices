@@ -33,13 +33,14 @@ alert("action: " + action + "clicked");
         console.error("There was an error submitting the form. Please try again.");
       }
     });
+    
   });
 });
 
 function handleResponse(response) {
   // Your code here to handle the response
   if (response.success) {
-    alert("Form submitted successfully!");
+    alert("Form submitted successfully! " + response);
     $('#myForm')[0].reset(); // Reset the form after successful submission
   } else {
     console.error("There was an error submitting the form. Please try again.");
