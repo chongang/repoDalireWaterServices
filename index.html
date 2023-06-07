@@ -8,12 +8,16 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="ref/style.css">
   <script>
+    //initialize the page
     window.onload = function(){
+      
         var input = document.getElementById("date");
         var currentDate = new Date();
         // Format the date as YYYY-MM-DD
         var formattedDate = currentDate.toISOString().split("T")[0];
         input.value = formattedDate;
+      
+        showTab('tab1');
     };  
   </script>
 </head>
