@@ -37,7 +37,12 @@ body {
   background-color: #f1f1f1;
   z-index: 9999;
 }
-  
+
+.form-scroll {
+  max-height: 300px; /* Adjust the height as needed */
+  overflow-y: auto;
+}
+
 }
 
 h1 {
