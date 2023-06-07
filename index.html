@@ -16,8 +16,6 @@
           <label for="accntno">Account No:</label>
           <input type="text" id="accntno" inputmode="numeric" name="accntno" required>
           <button type="submit" id="getAccount" data-action="getAccount" type="button" >Open account</button>
-      <br>
-          <button type="submit" id="saveAccount" data-action="saveAccount" type="button" >Save account</button>
       <br><br>
       
       <label for="meternumber">Meter No.:</label>
@@ -38,11 +36,35 @@
           <input type="text" id="prvmonth" name="prvmonth" disabled>
           <label for="curmonth">Current:</label>
           <input type="text" id="curmonth" inputmode="numeric"  maxlength="7" name="curmonth">
-          <button type="button">Calculate</button>
-          <label for="cost">Cost:</label>
-          <h2>PHP 9,999.99</h2>
           
-          <input type="submit" value="Submit">
+          <table>
+              <tr>
+                <th>
+                  <button type="button" onlick="CalcCBM">Calculate</button>
+                </th>
+                <th>
+                  <!-- place holder-->
+                </th>
+              </tr>
+              <tr>
+                <td>
+                  <label for="CBM">CBM</label>
+                </td>
+                <td>
+                  <h2>2O</h2>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="cost">Cost:</label>
+                </td>
+                <td>
+                  <h2>PHP 9,999.99</h2>
+                </td>
+              </tr>
+         </table>
+
+          <button type="submit" id="saveAccount" data-action="saveAccount" type="button" >Save account</button>
         </div>
 
         <div id="tab2" class="tab-content">
