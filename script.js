@@ -5,7 +5,7 @@ $(document).ready(function() {
     var clickedButton = $(document.activeElement);
     var action = clickedButton.data("action");
     
-alert("action: " + action + " is clicked");
+//alert("action: " + action + " is clicked");
     
     var formData = {
       accountno: $('#accountno').val(),
@@ -46,7 +46,7 @@ function handleResponse(response) {
 
   
   Object.entries(response).forEach(function([key, value]) {
-    alert(key + ": " + value);
+   // alert(key + ": " + value);
   });
 
   // Reset the form after successful submission
