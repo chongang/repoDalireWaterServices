@@ -39,15 +39,12 @@ alert("action: " + action + " is clicked");
 
 function handleResponse(response) {
   // Your code here to handle the response
-  if (response.success) {
-    alert(response);
-      Object.entries(response).forEach(function([key, value]) {
-        console.log(key + ": " + value);
-    
-    //alert("Form submitted successfully! " + response);
-    $('#myForm')[0].reset(); // Reset the form after successful submission
-  } else {
-    console.error("There was an error submitting the form. Please try again.");
-  }
+  alert(response);
+  Object.entries(response).forEach(function([key, value]) {
+    console.log(key + ": " + value);
+  });
 
+  // Reset the form after successful submission
+  $('#myForm')[0].reset();
 }
+
