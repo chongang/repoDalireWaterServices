@@ -19,7 +19,6 @@
 </head>
 <body>
     <div class="container">
-      <div class="Xform-scroll">
     <h1>
       <label>Dalire Water Services</label>
       <input type="text" style="border: none; text-align: center;" id="date" name="date" readonly>
@@ -43,7 +42,7 @@
       <label for="name">Name:</label>
       <input type="text" id="name" name="name" required>
 
-     
+     <div class="form-scroll">
         <ul class="tab-navigation">
           <li><a href="#" onclick="showTab('tab1')" class="tab-link active">Reading</a></li>
           <li><a href="#" onclick="showTab('tab2')" class="tab-link">Billing</a></li>
@@ -151,9 +150,8 @@
               </tr>
             </table>
         </div>
+             </div> <!--form-scroll-->
     </form>
-        
-      </div> <!--form-scroll-->
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
