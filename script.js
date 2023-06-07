@@ -24,9 +24,16 @@ alert("action: " + action + " is clicked");
 //alert("completed var params");
     $.ajax({
       url: url,
-      dataType: "json",
+      dataType: "jsonp",
       success: function(response) {
-        handleResponse(response);
+            var result = JSON.parse(response);
+          console.log(result);
+
+        var name = result.Name;
+        var contactno = result.Contactno;
+        var address = result.Address;
+         alert("name" + ": " + name);
+        handleResponse();
       },
       error: function() {
         console.error("There was an error submitting the form. Please try again.");
@@ -36,17 +43,10 @@ alert("action: " + action + " is clicked");
   });
 });
 
-function handleResponse(response) {
+function handleResponse() {
   // Your code here to handle the response
-  alert(response);
-  
-      var result = JSON.parse(response);
-    console.log(result);
-  
-  var name = result.Name;
-  var contactno = result.Contactno;
-  var address = result.Address;
-   alert("name" + ": " + name);
+ 
+
   
 //  Object.entries(response).forEach(function([key, value]) {
  //   alert(key + ": " + value);
@@ -54,5 +54,6 @@ function handleResponse(response) {
 
   // Reset the form after successful submission
   $('#myForm')[0].reset();
+  alert("Success!");
 }
 
