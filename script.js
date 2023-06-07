@@ -5,16 +5,21 @@ $(document).ready(function() {
     var clickedButton = $(document.activeElement);
     var action = clickedButton.data("action");
     
-    
 alert("action: " + action + "clicked");
     
     var formData = {
+      accountno: $('#accountno').val(),
+      meternumber: $('#meternumber').val(),
       name: $('#name').val(),
-      email: $('#email').val()
+      prvmonth: $('#prvmonth').val(),
+      curmonth: $('#curmonth').val(),
+      contactno: $('#contactno').val(),
+      email: $('#email').val(),
+      address: $('#address').val()
     };
     
     var url = "https://script.google.com/macros/s/AKfycbxJyekpyzvZyG_mhp5Rjc2hw_mEauEbpN8GOfgLC70TN74pjJpqFWd-D_U7nfnewu7biA/exec"; 
-    url += "?function=" + "doSet";
+    url += "?function=" + action;
     url += "&" + $.param(formData);
 
 //alert("completed var params");
