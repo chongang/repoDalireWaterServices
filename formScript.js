@@ -20,7 +20,8 @@ function calcCBM(){
   // get values
  var cbmrate = document.getElementById("cbmrate").value;
  var curmonth = document.getElementById("curmonth").value;
- var prvmonth = document.getElementById("cbmrate").value;
+ var prvmonth = document.getElementById("prvmonth").value;
+  
   alert("cbmrate:" + cbmrate);
   alert("curmonth:" + curmonth);
   alert("prvmonth:" + prvmonth);
