@@ -17,8 +17,7 @@ alert("action: " + action + " is clicked");
       email: $('#email').val(),
       address: $('#address').val()
     };
-     var url = "https://script.google.com/macros/s/AKfycbyKUs0l6sZ7eRTcLaDyPPX_BZTC82C2Y7tRCG2UHzwDkX8m40kKwW8_pEMYHI6OOcyYcw/exec";
-    //var url = "https://script.google.com/macros/s/AKfycbxJyekpyzvZyG_mhp5Rjc2hw_mEauEbpN8GOfgLC70TN74pjJpqFWd-D_U7nfnewu7biA/exec"; 
+     var url = "https://script.google.com/macros/s/AKfycbxu7jcTXleROegX1KZAm383D39AU1clNFBwZ2S27-cvhMoue54DqsUuXxwPqcemjjyl/exec";
     url += "?function=" + action;
     url += "&" + $.param(formData);
 
