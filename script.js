@@ -17,7 +17,7 @@ alert("action: " + action + " is clicked");
       email: $('#email').val(),
       address: $('#address').val()
     };
-     var url = "https://script.google.com/macros/s/AKfycbxu7jcTXleROegX1KZAm383D39AU1clNFBwZ2S27-cvhMoue54DqsUuXxwPqcemjjyl/exec";
+     var url = "https://script.google.com/macros/s/AKfycbxGQGTcIWkLVCE5QcyszLPPYddItPsLuqFAb52c-7AU/dev";
     url += "?function=" + action;
     url += "&" + $.param(formData);
 
