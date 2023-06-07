@@ -68,6 +68,11 @@ input[type="submit"] {
   
 }
 
+.readonlyinput {
+  font-weight: bold;
+  border: none;
+}
+
 textarea{
  flex: 1;
  resize: none; 
