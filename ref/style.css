@@ -39,7 +39,7 @@ body {
 }
 
 .form-scroll {
-  max-height: 300px; /* Adjust the height as needed */
+  max-height: calc(100vh - 20px); /* Subtract padding or adjust as needed */
   overflow-y: auto;
 }
 
