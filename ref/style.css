@@ -55,6 +55,7 @@ input[type="email"] {
   border-radius: 3px;
   flex: 1;
   width: 100%;
+  font-size: 18px;
 }
 
 input[type="submit"] {
