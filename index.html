@@ -32,21 +32,31 @@
         </ul>
       
         <div id="tab1" class="tab-content">
-          
-          <label for="prvmonth">Previous:</label>
-          <input type="text" id="prvmonth" inputmode="numeric"  maxlength="7" value="1000888">
-          <label for="curmonth">Current:</label>
-          <input type="text" id="curmonth" inputmode="numeric"  maxlength="7" value="1000752">
-          
           <table>
               <tr>
-                <th>
+                <td>
+                  <label for="prvmonth">Previous:</label>
+                </td>
+                <td>
+                  <input type="text" style="font-size: 18px;" id="prvmonth" inputmode="numeric"  maxlength="7" value="1000888">
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="curmonth">Current:</label>
+                </td>
+                <td>
+                  <input type="text" style="font-size: 18px;" id="curmonth" inputmode="numeric"  maxlength="7" value="1000752">
+                </td>
+              </tr>
+              <tr>
+                <td>
                   <button type="button" onclick="calcCBM()">Calculate</button>
-                </th>
-                <th>
+                </td>
+                <td>
                   <label for="cbmrate">PhP/CBM:</label>
                   <input type="text" id="cbmrate" inputmode="numeric" value="50.00">
-                </th>
+                </td>
               </tr>
               <tr>
                 <td>
