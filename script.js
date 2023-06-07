@@ -41,7 +41,7 @@ function handleResponse(response) {
   // Your code here to handle the response
   alert(response);
   Object.entries(response).forEach(function([key, value]) {
-    console.log(key + ": " + value);
+    alert(key + ": " + value);
   });
 
   // Reset the form after successful submission
