@@ -5,7 +5,7 @@ $(document).ready(function() {
     var clickedButton = $(document.activeElement);
     var action = clickedButton.data("action");
     
-alert("action: " + action + "clicked");
+alert("action: " + action + " is clicked");
     
     var formData = {
       accountno: $('#accountno').val(),
