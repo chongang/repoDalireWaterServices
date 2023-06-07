@@ -21,7 +21,7 @@ alert("action: " + action + " is clicked");
       email: $('#email').val(),
       address: $('#address').val()
     };
-     var url = "https://script.google.com/macros/s/AKfycbxu7jcTXleROegX1KZAm383D39AU1clNFBwZ2S27-cvhMoue54DqsUuXxwPqcemjjyl/exec";
+     var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
     url += "?function=" + action;
     url += "&" + $.param(formData);
 
