@@ -39,10 +39,14 @@ alert("action: " + action + " is clicked");
 function handleResponse(response) {
   // Your code here to handle the response
   alert(response);
-  var name = response.Name;
-  var contactno = response.Contactno;
-  var address = response.Address;
-   alert("address" + ": " + address);
+  
+      var result = JSON.parse(response);
+    console.log(result);
+  
+  var name = result.Name;
+  var contactno = result.Contactno;
+  var address = result.Address;
+   alert("name" + ": " + name);
   
 //  Object.entries(response).forEach(function([key, value]) {
  //   alert(key + ": " + value);
