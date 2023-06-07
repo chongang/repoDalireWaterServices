@@ -41,10 +41,8 @@ function handleResponse(response) {
   // Your code here to handle the response
   if (response.success) {
     alert(response);
-       var keys = Object.keys(response);
-          keys.forEach(function(key) {
-            alert(key + ": " + response[key]);
-          });
+      Object.entries(response).forEach(function([key, value]) {
+        console.log(key + ": " + value);
     
     //alert("Form submitted successfully! " + response);
     $('#myForm')[0].reset(); // Reset the form after successful submission
