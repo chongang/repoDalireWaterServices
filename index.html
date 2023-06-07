@@ -32,6 +32,7 @@
         </ul>
       
         <div id="tab1" class="tab-content">
+          
           <label for="prvmonth">Previous:</label>
           <input type="text" id="prvmonth" inputmode="numeric"  maxlength="7" value="1000888">
           <label for="curmonth">Current:</label>
@@ -49,25 +50,28 @@
               </tr>
               <tr>
                 <td>
-                  <!--place holder-->
+                  <label for="cbm">CBM</label>
                 </td>
                 <td>
-                  <label for="cbm">CBM</label>
                   <input type="text" id="cbm" inputmode="numeric" name="cbm" value="0.00">
                 </td>
               </tr>
               <tr>
                 <td>
-                  <!--place holder-->
+                  <label for="cost">Cost (PHP):</label>
                 </td>
                 <td>
-                  <label for="cost">Cost (PHP):</label>
                   <input type="text" id="cost" inputmode="numeric" name="cost" value="0.00">
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <button type="submit" id="saveAccount" data-action="saveReading" type="button" >Save Reading</button>
                 </td>
               </tr>
          </table>
 
-          <button type="submit" id="saveAccount" data-action="saveAccount" type="button" >Save account</button>
+          
         </div>
 
         <div id="tab2" class="tab-content">
@@ -92,7 +96,7 @@
                   <label for="contactno">Contact No.:</label>
                 </td>
                 <td>
-                  <input type="text" id="contactno" name="contactno" inputmode="numeric"  maxlength="11" value="09212345678" disabled>
+                  <input type="text" id="contactno" name="contactno" inputmode="numeric"  maxlength="11" value="09212345678">
                 </td>
               </tr>
               <tr>
@@ -101,7 +105,12 @@
               </tr>
               <tr>
                 <td><label for="address">Address:</label></td>
-                <td><textarea id="address" name="address" placeholder="No address recorded" disabled>B11 L2 Pinagsama Vill, Ph1, Taguig City</textarea></td>
+                <td><textarea id="address" name="address" placeholder="No address recorded">B11 L2 Pinagsama Vill, Ph1, Taguig City</textarea></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <button type="submit" id="saveAccount" data-action="saveAccount" type="button" >Save Account</button>
+                </td>
               </tr>
             </table>
         </div>
