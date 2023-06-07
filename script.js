@@ -40,6 +40,7 @@ alert("action: " + action + " is clicked");
 function handleResponse(response) {
   // Your code here to handle the response
   if (response.success) {
+    alert(response);
        var keys = Object.keys(response);
           keys.forEach(function(key) {
             alert(key + ": " + response[key]);
