@@ -47,7 +47,7 @@
       </table>
         
       <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+      <input type="text" class="inputfixed" style="text-align: center;font-weight: bold;" id="name" name="name" required>
 
      <div class="form-scroll">
         <ul class="tab-navigation">
@@ -63,7 +63,7 @@
                   <label for="prvmonth">Previous:</label>
                 </td>
                 <td>
-                  <input type="text" id="prvmonth" inputmode="numeric"  maxlength="7" value="1000888">
+                  <input type="text" class="inputfixed" id="prvmonth" inputmode="numeric"  maxlength="7" value="1000888">
                 </td>
               </tr>
               <tr>
@@ -80,7 +80,7 @@
                 </td>
                 <td>
                   <label for="cbmrate">PhP/CBM:</label>
-                  <input type="text" id="cbmrate" inputmode="numeric" value="50.00">
+                  <input type="text" class="inputfixed" id="cbmrate" inputmode="numeric" value="50.00">
                 </td>
               </tr>
               <tr>
@@ -88,7 +88,7 @@
                   <label for="cbm">CBM</label>
                 </td>
                 <td>
-                  <input type="text" class="readonlyinput" id="cbm" inputmode="numeric" name="cbm" value="0.00">
+                  <input type="text" class="inputfixed" style="font-weight: bold;" id="cbm" inputmode="numeric" name="cbm" value="0.00">
                 </td>
               </tr>
               <tr>
@@ -96,7 +96,7 @@
                   <label for="cost">Cost (PHP):</label>
                 </td>
                 <td>
-                  <input type="text" class="readonlyinput" id="cost" inputmode="numeric" name="cost" value="0.00">
+                  <input type="text" class="inputfixed" style="font-weight: bold;" id="cost" inputmode="numeric" name="cost" value="0.00">
                 </td>
               </tr>
               <tr>
@@ -131,7 +131,7 @@
                     <label for="accntno">Account No:</label>
                 </td>
                 <td>
-                   <input type="text" id="accntno" inputmode="numeric" name="accntno">
+                   <input type="text"  class="inputfixed" id="accntno" inputmode="numeric" name="accntno">
                 </td>
               </tr>
               <tr>
@@ -139,20 +139,20 @@
                   <label for="contactno">Contact No.:</label>
                 </td>
                 <td>
-                  <input type="text" id="contactno" name="contactno" inputmode="numeric"  maxlength="11" value="09212345678">
+                  <input type="text"  class="inputfixed" id="contactno" name="contactno" inputmode="numeric"  maxlength="11" value="09212345678">
                 </td>
               </tr>
               <tr>
                 <td><label for="email">Email:</label></td>
-                <td><input type="email" id="email" name="email" value="account@gmail.com" required></td>
+                <td><input type="email"  class="inputfixed" id="email" name="email" value="account@gmail.com" required></td>
               </tr>
               <tr>
                 <td><label for="address">Address:</label></td>
-                <td><textarea id="address" name="address" placeholder="No address recorded">B11 L2 Pinagsama Vill, Ph1, Taguig City</textarea></td>
+                <td><textarea id="address"  class="inputfixed" name="address" placeholder="No address recorded">B11 L2 Pinagsama Vill, Ph1, Taguig City</textarea></td>
               </tr>
               <tr>
                 <td colspan="2">
-                  <button type="submit" id="saveAccount" data-action="saveAccount" type="button" >Save Account</button>
+                  <button type="submit" id="saveAccount" data-action="saveAccount" type="button" > <i class="fas fa-save"></i> Save Account</button>
                 </td>
               </tr>
             </table>
