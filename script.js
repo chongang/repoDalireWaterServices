@@ -8,8 +8,8 @@ $(document).ready(function() {
     
 
     if (action==="saveReading"){
-      var objFound = new Object();
-          objFound = searchValue(meterno,"A:A","ReadingDB");
+      //var objFound = new Object();
+        var objFound = searchValue(meterno,"A:A","ReadingDB");
       alert("isFound:"+ objFound.found);
       if (objFound.found){
         alert("Meter No. [" + meterno + "] is already saved, please to delete previous data, and try again");
@@ -84,14 +84,12 @@ function handleResponse(response,action) {
 
 
 function searchValue(Search,Range,SheetName){
-    
     action = "searchValue";
     var formData = {
         sheetname: SheetName,
         range: Range,
         search: Search
     }
-    
     var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
     url += "?function=" + action;
     url += "&" + $.param(formData);
