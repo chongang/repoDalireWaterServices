@@ -78,11 +78,15 @@
                 </td>
               </tr>
               <tr>
-                <td>
-                  <button type="button"  class="icon-button" onclick="calcCBM()"><i class="fas fa-calculator"></i></button>
+                <td colspan="2">
+                  <button type="button"  class="icon-button" style="width: 100%;" id="saveReading" onclick="calcCBM()"><i class="fas fa-calculator"></i>Calculate CBM</button>
                 </td>
+              </tr>
+              <tr>
                 <td>
                   <label for="cbmrate">PhP/CBM:</label>
+                </td>
+                <td>
                   <input type="text" class="inputfixed" style="border:0px;" id="cbmrate" inputmode="numeric" value="50.00">
                 </td>
               </tr>
@@ -104,7 +108,7 @@
               </tr>
               <tr>
                 <td colspan="2">
-                  <button type="submit"  class="icon-button" style="width: 100%;" id="saveReading" data-action="saveReading" type="button" ><i class="fas fa-save"></i> Save Reading</button>
+                  <button type="submit"  class="icon-button" style="width: 100%;" id="saveReading" data-action="saveReading"><i class="fas fa-save"></i> Save Reading</button>
                 </td>
               </tr>
          </table>
@@ -155,7 +159,7 @@
               </tr>
               <tr>
                 <td colspan="2">
-                  <button type="submit" id="saveAccount" data-action="saveAccount" type="button" > <i class="fas fa-save"></i> Save Account</button>
+                  <button type="submit" id="saveAccount" data-action="saveAccount"> <i class="fas fa-save"></i> Save Account</button>
                 </td>
               </tr>
             </table>
