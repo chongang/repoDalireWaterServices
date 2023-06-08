@@ -73,7 +73,7 @@ function handleResponse(response,action) {
 
   // Reset the form after successful submission
   //$('#myForm')[0].reset();
-  if (response.returnmsg==="undefined"){
+  if (response.returnmsg === undefined){
     alert("Success!");
   }else{
     alert(response.returnmsg);
