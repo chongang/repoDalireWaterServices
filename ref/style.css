@@ -91,6 +91,13 @@ input[type="submit"] {
   border: none;
 }
 
+.inputfixed{
+  border: none; 
+  text-align: center;
+  outline: none;
+  background-color: transparent;
+}
+
 textarea{
  flex: 1;
  resize: none; 
