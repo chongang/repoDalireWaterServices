@@ -5,7 +5,7 @@ $(document).ready(function() {
     var clickedButton = $(document.activeElement);
     var action = clickedButton.data("action");
     
-alert("action: " + action + " is clicked");
+//alert("action: " + action + " is clicked");
     
     var formData = {
       accountno: $('#accountno').val(),
@@ -40,16 +40,14 @@ alert("action: " + action + " is clicked");
   });
 });
 
-function handleResponse(response,functionName) {
+function handleResponse(response,action) {
   // Your code here to handle the response
   //Object.entries(response).forEach(function([key, value]) {
     //alert(key + ": " + value);
   //});
-alert("functionName:"+functionName);
   
   //Get Account
-  if (functionName === "getAccount") {
-      alert("name:"+response.name);
+  if (action === "getAccount") {
           $('#name').prop('readonly', function(_, readonly) {
             $('#name').val(response.name);
             return !readonly; // Toggle the readonly state
