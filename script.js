@@ -4,9 +4,18 @@ $(document).ready(function() {
 
     var clickedButton = $(document.activeElement);
     var action = clickedButton.data("action");
-    
-//alert("action: " + action + " is clicked");
     var meterno = $('#meternumberbase').val()+$('#meternumber').val()
+    
+
+    if (action==="saveReading"){
+      var res = searchValue(meterno,"A:A","ReadingDB");
+      if (res.found){
+        alert("Meter No. [" + meterno + "] is already saved, please to delete previous data, and try again");
+        return;
+      }
+    }
+    
+
     var formData = {
       meternumber: meterno,
       accountno: $('#accountno').val(),
@@ -21,18 +30,7 @@ $(document).ready(function() {
       email: $('#email').val(),
       address: $('#address').val()
     };
-    
-    /*
-    if (action=="saveReading"){
-      formData = {
-        sheetname: "MeterDB",
-        range: "A:A",
-        search: meterno
-      }
-      */
-    
-    }
-    
+        
     var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
     url += "?function=" + action;
     url += "&" + $.param(formData);
@@ -74,10 +72,37 @@ function handleResponse(response,action) {
 
   // Reset the form after successful submission
   //$('#myForm')[0].reset();
-  alert(response.returnmsg);
+  if (response.returnmsg==="undefined"){
+    alert("Success!");
+  }else{
+    alert(response.returnmsg);
+  }
+    
 }
 
 
-function searchValue(){
-  searchValue
+function searchValue(Search,Range,SheetName){
+    
+    action = "searchValue";
+    var formData = {
+        sheetname: SheetName,
+        range: Range,
+        search: Search
+    }
+    
+    var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
+    url += "?function=" + action;
+    url += "&" + $.param(formData);
+
+    $.ajax({
+      url: url,
+      dataType: "jsonp",
+      success: function(response) {
+        return response;
+      },
+      error: function() {
+        console.error("There was an error while searching.");
+      }
+    });
+
 }
