@@ -43,10 +43,10 @@ alert("action: " + action + " is clicked");
 function handleResponse(response) {
   // Your code here to handle the response
  
+  alert(response.name);
 
-  
   Object.entries(response).forEach(function([key, value]) {
-   // alert(key + ": " + value);
+    alert(key + ": " + value);
   });
 
   // Reset the form after successful submission
