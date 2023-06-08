@@ -99,7 +99,11 @@ function searchValue(Search,Range,SheetName){
       url: url,
       dataType: "jsonp",
       success: function(response) {
-        return response.found;
+       
+         Object.entries(response).forEach(function([key, value]) {
+          alert(key + ": " + value);
+        });
+         return response.found;
       },
       error: function() {
         console.error("There was an error while searching.");
