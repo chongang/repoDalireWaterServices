@@ -103,6 +103,7 @@ function searchValue(Search,Range,SheetName){
          Object.entries(response).forEach(function([key, value]) {
           alert(key + ": " + value);
         });
+        alert("Iffdfd:" + response.found);
          return response.found;
       },
       error: function() {
