@@ -56,7 +56,7 @@ function handleResponse(response,action) {
 
   // Reset the form after successful submission
   //$('#myForm')[0].reset();
-  alert("Success!");
+  alert(response.returnmsg);
 }
 
 
