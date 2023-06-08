@@ -8,8 +8,8 @@ $(document).ready(function() {
     
 
     if (action==="saveReading"){
-      var res = searchValue(meterno,"A:A","ReadingDB");
-      if (res.found){
+      var isFound = searchValue(meterno,"A:A","ReadingDB");
+      if (isFound){
         alert("Meter No. [" + meterno + "] is already saved, please to delete previous data, and try again");
         return;
       }
@@ -98,7 +98,7 @@ function searchValue(Search,Range,SheetName){
       url: url,
       dataType: "jsonp",
       success: function(response) {
-        return response;
+        return response.found;
       },
       error: function() {
         console.error("There was an error while searching.");
