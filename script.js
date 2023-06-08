@@ -42,9 +42,9 @@ $(document).ready(function() {
 
 function handleResponse(response,action) {
   // Your code here to handle the response
-  Object.entries(response).forEach(function([key, value]) {
-    alert(key + ": " + value);
-  });
+  //Object.entries(response).forEach(function([key, value]) {
+  //  alert(key + ": " + value);
+  //});
   
   //Get Account
   if (action === "getAccount") {
