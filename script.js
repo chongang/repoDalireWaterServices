@@ -47,8 +47,9 @@ function handleResponse(response,functionName) {
   //});
 alert("functionName:"+functionName);
   if (functionName === "getAccount") {
-    alert("gotin!");
-    $('#name').val(response.name);
+    alert("gotin name!"+response.name);
+    
+    $('#name').val("My Name");
   }
   
   // Reset the form after successful submission
