@@ -50,6 +50,10 @@ function handleResponse(response,action) {
   if (action === "getAccount") {
           $('#name').prop('readonly', function(_, readonly) {
             $('#name').val(response.name);
+            $('#accntno').val(response.accountno);
+            $('#contactno').val(response.contactno);
+            $('#address').val(response.address);
+            $('#email').val(response.email);
             return !readonly; // Toggle the readonly state
           });
   }
