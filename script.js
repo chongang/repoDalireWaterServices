@@ -54,6 +54,8 @@ function handleResponse(response,action) {
             $('#contactno').val(response.contactno);
             $('#address').val(response.address);
             $('#email').val(response.email);
+            $('#prvmonth').val(response.lastreading);
+            $('#curmonth').val(response.lastreading); //set same initially
             return !readonly; // Toggle the readonly state
           });
   }
