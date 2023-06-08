@@ -46,12 +46,17 @@ function handleResponse(response,functionName) {
     //alert(key + ": " + value);
   //});
 alert("functionName:"+functionName);
-  if (functionName === "getAccount") {
-    alert("gotin name!"+response.name);
-    
-    $('#name').val("My Name");
-  }
   
+  //Get Account
+  if (functionName === "getAccount") {
+      alert("gotin name!"+response.name);
+        // Toggle the readonly state,  before writing nwe value
+      $('#name').prop('readonly', function(_, readonly) {
+        $('#name').val(response.name);
+        return !readonly; 
+      });
+  }
+
   // Reset the form after successful submission
   $('#myForm')[0].reset();
   alert("Success!");
