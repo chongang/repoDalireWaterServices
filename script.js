@@ -50,7 +50,10 @@ alert("functionName:"+functionName);
   //Get Account
   if (functionName === "getAccount") {
       alert("name:"+response.name);
-      $('#name').val(response.name);
+          $('#name').prop('readonly', function(_, readonly) {
+            $('#name').val(response.name);
+            return !readonly; // Toggle the readonly state
+          });
   }
 
   // Reset the form after successful submission
