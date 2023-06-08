@@ -9,6 +9,7 @@ $(document).ready(function() {
 
     if (action==="saveReading"){
       var isFound = searchValue(meterno,"A:A","ReadingDB");
+      alert("isFound:"+isFound);
       if (isFound){
         alert("Meter No. [" + meterno + "] is already saved, please to delete previous data, and try again");
         return;
