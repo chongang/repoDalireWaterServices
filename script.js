@@ -30,7 +30,7 @@ alert("action: " + action + " is clicked");
       url: url,
       dataType: "jsonp",
       success: function(response) {
-        handleResponse(response);
+        handleResponse(response,action);
       },
       error: function() {
         console.error("There was an error submitting the form. Please try again.");
@@ -40,7 +40,7 @@ alert("action: " + action + " is clicked");
   });
 });
 
-function handleResponse(response) {
+function handleResponse(response,functionName) {
   // Your code here to handle the response
   //Object.entries(response).forEach(function([key, value]) {
     //alert(key + ": " + value);
