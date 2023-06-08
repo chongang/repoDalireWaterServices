@@ -92,11 +92,11 @@ input[type="submit"] {
 }
 
 .inputfixed{
-  border: 0; 
-  padding: 0;
-  margin: 0;
+  border: 0px; 
+  padding: 0px;
+  margin: 0px;
   text-align: center;
-  outline: 0;
+  outline: 0px;
   background-color: transparent;
 }
 
