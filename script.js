@@ -9,7 +9,7 @@ $(document).ready(function() {
     
     var formData = {
       accountno: $('#accountno').val(),
-      meternumber: $('#meternumber').val(),
+      meternumber: $('#meternumberbase').val()+$('#meternumber').val(),
       name: $('#name').val(),
       prvmonth: $('#prvmonth').val(),
       curmonth: $('#curmonth').val(),
