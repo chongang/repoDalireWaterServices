@@ -54,7 +54,7 @@ alert("functionName:"+functionName);
   }
 
   // Reset the form after successful submission
-  $('#myForm')[0].reset();
+  //$('#myForm')[0].reset();
   alert("Success!");
 }
 
