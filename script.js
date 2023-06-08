@@ -42,15 +42,17 @@ alert("action: " + action + " is clicked");
 
 function handleResponse(response) {
   // Your code here to handle the response
- 
-  alert(response.name);
+  //Object.entries(response).forEach(function([key, value]) {
+    //alert(key + ": " + value);
+  //});
 
-  Object.entries(response).forEach(function([key, value]) {
-    alert(key + ": " + value);
-  });
-
+  if (functionName === "getAccount") {
+    $('#name').val(response.name);
+  }
+  
   // Reset the form after successful submission
   $('#myForm')[0].reset();
   alert("Success!");
 }
+
 
