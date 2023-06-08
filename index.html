@@ -33,13 +33,21 @@
 
       <label for="meternumber">Meter No.:</label>
       
-        <div style="display:flex;gap:10px">
-                <input type="text" id="meternumberbase" inputmode="numeric" style="text-align: center;font-weight: bold;" maxlength="5" value="20190" disabled>
-                <input type="text" id="meternumber" inputmode="numeric" style="text-align: center;font-weight: bold;" maxlength="5" value="0----">
-        <div class="input-container">
-         <button type="submit" class="icon-button" style="width: 100%;" id="getAccount" data-action="getAccount" type="button" >
-               <i class="fas fa-search"></i>
-         </button>
+      <table>
+        <tr>
+          <td>
+            <div style="display:flex;gap:10px">
+                    <input type="text" id="meternumberbase" inputmode="numeric" style="text-align: center;font-weight: bold;" maxlength="5" value="20190" disabled>
+                    <input type="text" id="meternumber" inputmode="numeric" style="text-align: center;font-weight: bold;" maxlength="5" value="0----">
+            <div class="input-container">
+          <td>
+          </td>
+           <button type="submit" class="icon-button" style="width: 100%;" id="getAccount" data-action="getAccount" type="button" >
+                 <i class="fas fa-search"></i>
+           </button>
+          </td>
+         </tr>
+       </table>
         
       <label for="name">Name:</label>
       <input type="text" class="inputfixed" style="text-align: center;font-weight: bold;" id="name" name="name" placeholder="<Meter No. Required>" required>
