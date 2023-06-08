@@ -49,12 +49,16 @@ alert("functionName:"+functionName);
   
   //Get Account
   if (functionName === "getAccount") {
-      alert("gotin name!"+response.name);
-        // Toggle the readonly state,  before writing nwe value
-      $('#name').prop('readonly', function(_, readonly) {
-        $('#name').val(response.name);
-        return !readonly; 
-      });
+
+        var inputElement = document.getElementById("name");
+        // Check if input is currently readonly
+        if (inputElement.readOnly) {
+          inputElement.readOnly = false; // Remove readonly
+          // Change the value
+          inputElement.value = response.name;
+          // Set back to readonly
+          inputElement.readOnly = true;
+        }
   }
 
   // Reset the form after successful submission
