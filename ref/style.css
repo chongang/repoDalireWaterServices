@@ -176,6 +176,7 @@ table {
   width: 100%;
   border-collapse: collapse;
   font-family: Arial, sans-serif;
+  vertical-align: middle; 
 }
 
 table th,
