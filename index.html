@@ -51,9 +51,9 @@
 
      <div class="form-scroll">
         <ul class="tab-navigation">
-          <li><a href="#" onclick="showTab('tab1')" class="tab-link active">Reading</a></li>
-          <li><a href="#" onclick="showTab('tab2')" class="tab-link">Billing</a></li>
-          <li><a href="#" onclick="showTab('tab3')" class="tab-link">Account</a></li>
+          <li><a href="#" onclick="showTab('tab1')" class="tab-link active"><i class="fas fa-tachometer-alt"></i></a></li>
+          <li><a href="#" onclick="showTab('tab2')" class="tab-link"><i class="fas fa-file-invoice-dollar"></i></a></li>
+          <li><a href="#" onclick="showTab('tab3')" class="tab-link"><i class="fas fa-user"></i></a></li>
         </ul>
       
         <div id="tab1" class="tab-content">
@@ -76,7 +76,7 @@
               </tr>
               <tr>
                 <td>
-                  <button type="button" onclick="calcCBM()">Calculate</button>
+                  <button type="button"  class="icon-button" onclick="calcCBM()"><i class="fas fa-calculator"></i></button>
                 </td>
                 <td>
                   <label for="cbmrate">PhP/CBM:</label>
@@ -101,7 +101,7 @@
               </tr>
               <tr>
                 <td colspan="2">
-                  <button type="submit" id="saveReading" data-action="saveReading" type="button" >Save Reading</button>
+                  <button type="submit"  class="icon-button" id="saveReading" data-action="saveReading" type="button" ><i class="fas fa-save"></i> Save Reading</button>
                 </td>
               </tr>
          </table>
