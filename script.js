@@ -6,10 +6,10 @@ $(document).ready(function() {
     var action = clickedButton.data("action");
     
 //alert("action: " + action + " is clicked");
-    
+    var meterno = $('#meternumberbase').val()+$('#meternumber').val()
     var formData = {
+      meternumber: meterno,
       accountno: $('#accountno').val(),
-      meternumber: $('#meternumberbase').val()+$('#meternumber').val(),
       name: $('#name').val(),
       prvmonth: $('#prvmonth').val(),
       curmonth: $('#curmonth').val(),
@@ -21,7 +21,19 @@ $(document).ready(function() {
       email: $('#email').val(),
       address: $('#address').val()
     };
-     var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
+    
+    /*
+    if (action=="saveReading"){
+      formData = {
+        sheetname: "MeterDB",
+        range: "A:A",
+        search: meterno
+      }
+      */
+    
+    }
+    
+    var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
     url += "?function=" + action;
     url += "&" + $.param(formData);
 
@@ -66,3 +78,6 @@ function handleResponse(response,action) {
 }
 
 
+function searchValue(){
+  searchValue
+}
