@@ -45,8 +45,9 @@ function handleResponse(response,functionName) {
   //Object.entries(response).forEach(function([key, value]) {
     //alert(key + ": " + value);
   //});
-
+alert("functionName:"+functionName);
   if (functionName === "getAccount") {
+    alert("gotin!");
     $('#name').val(response.name);
   }
   
