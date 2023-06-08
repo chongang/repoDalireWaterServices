@@ -35,10 +35,11 @@
       
       <table>
           <tr>
-            <td  style="width:80%;">
-              <input type="text" id="meternumber" inputmode="numeric"  maxlength="7"/>
+            <td>
+              <input type="text" id="meternumberbase" inputmode="numeric" style="text-align: center;font-weight: bold;" maxlength="5" value="20190" disabled>
+              <input type="text" id="meternumber" inputmode="numeric" style="text-align: center;font-weight: bold;" maxlength="5" value="0----">
             </td>
-             <td  style="width:20%;" >
+             <td>
                 <button type="submit" class="icon-button" id="getAccount" data-action="getAccount" type="button" >
                   <i class="fas fa-search"></i>
                </button>
@@ -63,7 +64,7 @@
                   <label for="prvmonth">Previous:</label>
                 </td>
                 <td>
-                  <input type="text" class="inputfixed" id="prvmonth" inputmode="numeric"  maxlength="7" value="1000888">
+                  <input type="text" class="inputfixed" id="prvmonth" inputmode="numeric"  maxlength="5" value="00000">
                 </td>
               </tr>
               <tr>
@@ -71,7 +72,7 @@
                   <label for="curmonth">Current:</label>
                 </td>
                 <td>
-                  <input type="text" id="curmonth" inputmode="numeric"  maxlength="7" value="1000752">
+                  <input type="text" id="curmonth" inputmode="numeric"  style="text-align: center;font-weight: bold;" maxlength="5" value="00000">
                 </td>
               </tr>
               <tr>
