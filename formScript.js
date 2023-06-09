@@ -9,7 +9,7 @@ function initForm(){
   input.addEventListener("curmonth", function() {
     eventCurrentMonthChange();
   });
-  
+  alert("initialized");
 }
 
 function showTab(tabName) {
