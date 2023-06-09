@@ -1,5 +1,5 @@
 function initForm(){
-  alert("initializing...");
+ // alert("initializing...");
   
 // Add an event listener for the input of meter ID
   var inputMeternumber = document.getElementById("meternumber");
@@ -20,7 +20,7 @@ function initForm(){
     var formattedDate = currentDate.toISOString().split("T")[0];
     document.getElementById("date").value = formattedDate;
   
-  alert("initialized");
+ // alert("initialized");
 }
 
 function showTab(tabName) {
@@ -50,13 +50,12 @@ function eventMeterNumberChange() {
   } else {
     buttonElement.disabled = false;
   }
-  
-  alert("done eventMeterNumberChange");
 }
 
 function eventCurrentMonthChange() {
-  var buttonElement = document.getElementById("calculateCBM");
-    buttonElement.disabled = false;
+  calcCBM();
+ // var buttonElement = document.getElementById("calculateCBM");
+  //  buttonElement.disabled = false;
 }
 
 function calcCBM(){
@@ -64,12 +63,18 @@ function calcCBM(){
  var cbmrate = document.getElementById("cbmrate").value;
  var curmonth = document.getElementById("curmonth").value;
  var prvmonth = document.getElementById("prvmonth").value;
+ var calcNote = document.getElementById("calcNote").value;
+  
   
   //calculate
   if (curmonth < prvmonth){
-    alert("Current Reading cannot be lower than Previous Reading!");
+    element.style.display = "block";
+    element.value = "Current Reading cannot be lower than Previous Reading!";
     return;
+  } else {
+    element.style.display = "none";
   }
+  
  var cbm = (curmonth-prvmonth)
  var cost = (cbm*cbmrate)
  
