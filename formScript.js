@@ -1,3 +1,12 @@
+function initForm(){
+  
+// Add an event listener for the input of meter ID
+  input.addEventListener("meternumber", function() {
+    eventMeterNumberChange();
+  });
+  
+}
+
 function showTab(tabName) {
   // Hide all tab contents
   var tabContents = document.getElementsByClassName('tab-content');
@@ -16,7 +25,7 @@ function showTab(tabName) {
   event.currentTarget.classList.add('active');
 }
 
-function updateButtonState() {
+function eventMeterNumberChange() {
   var inputElement = document.getElementById("meternumber");
   var buttonElement = document.getElementById("getAccount");
   
