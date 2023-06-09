@@ -9,22 +9,23 @@ $(document).ready(function() {
     var meterno = $('#meternumberbase').val()+$('#meternumber').val()
     
 
-  if (action === "saveReading") {
-    var objFound = searchValue(meterno, "A:A", "ReadingDB", function(objFound) {
-    alert("objF: " + objFound);
-    Object.entries(objFound).forEach(function([key, value]) {
-      alert(key + " objFnd: " + value);
-    });
+      if (action === "saveReading") {
+        var objFound = searchValue(meterno, "A:A", "ReadingDB", function(objFound) {
+        alert("objF: " + objFound);
+        Object.entries(objFound).forEach(function([key, value]) {
+          alert(key + " objFnd: " + value);
+        });
 
-    if (objFound.found) {
-      alert("Meter No. [" + meterno + "] is already saved. Please delete the previous data and try again.");
-      return;
+        if (objFound.found) {
+          alert("Meter No. [" + meterno + "] is already saved. Please delete the previous data and try again.");
+          return;
+        }
+      });
     }
-  });
-}
 
     
-
+    var meterno = $('#meternumberbase').val()+$('#meternumber').val();
+    
     var formData = {
       meternumber: meterno,
       accountno: $('#accountno').val(),
