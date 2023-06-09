@@ -11,7 +11,7 @@ $(document).ready(function() {
   searchValue(meterno, "A:A", "ReadingDB", function(objFound) {
     alert("objF: " + objFound);
     Object.entries(objFound).forEach(function([key, value]) {
-      alert(key + "objF: " + value);
+      alert(key + "objFnd: " + value);
     });
 
     if (objFound.found) {
