@@ -68,11 +68,11 @@ function calcCBM(){
   
   //calculate
   if (curmonth < prvmonth){
-    element.style.display = "block";
-    element.value = "Current Reading cannot be lower than Previous Reading!";
+    calcNote.style.display = "block";
+    calcNote.value = "Current Reading cannot be lower than Previous Reading!";
     return;
   } else {
-    element.style.display = "none";
+    calcNote.style.display = "none";
   }
   
  var cbm = (curmonth-prvmonth)
