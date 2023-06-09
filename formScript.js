@@ -9,6 +9,14 @@ function initForm(){
   input.addEventListener("curmonth", function() {
     eventCurrentMonthChange();
   });
+  
+  //preset values
+  //Preset date
+    var currentDate = new Date();
+  // Format the date as YYYY-MM-DD
+    var formattedDate = currentDate.toISOString().split("T")[0];
+    document.getElementById("date").value = formattedDate;
+  
   alert("initialized");
 }
 
