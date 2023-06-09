@@ -7,19 +7,19 @@ $(document).ready(function() {
     var meterno = $('#meternumberbase').val()+$('#meternumber').val()
     
 
-    if (action==="saveReading"){
-      //var objFound = new Object();
-        var objFound = searchValue(meterno,"A:A","ReadingDB");
-      alert("objF: " + objFound);
-         Object.entries(objFound).forEach(function([key, value]) {
-          alert(key + "objF: " + value);
+      if (action === "saveReading") {
+        searchValue(meterno, "A:A", "ReadingDB", function(objFound) {
+          alert("objF: " + objFound);
+          Object.entries(objFound).forEach(function([key, value]) {
+            alert(key + "objF: " + value);
+          });
+
+          if (objFound.found) {
+            alert("Meter No. [" + meterno + "] is already saved. Please delete the previous data and try again.");
+            return;
+          }
         });
-      
-      if (objFound.found){
-        alert("Meter No. [" + meterno + "] is already saved, please to delete previous data, and try again");
-        return;
       }
-    }
     
 
     var formData = {
@@ -87,35 +87,32 @@ function handleResponse(response,action) {
 }
 
 
-function searchValue(Search,Range,SheetName){
-    action = "searchValue";
-    var searchData = {
-        sheetname: SheetName,
-        range: Range,
-        search: Search
+function searchValue(Search, Range, SheetName, callback) {
+  var action = "searchValue";
+  var searchData = {
+    sheetname: SheetName,
+    range: Range,
+    search: Search
+  };
+  var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
+  url += "?function=" + action;
+  url += "&" + $.param(searchData);
+
+  $.ajax({
+    url: url,
+    dataType: "jsonp",
+    success: function(response) {
+      var searchResult = {
+        found: response.found,
+        index: response.index
+      };
+      callback(searchResult); // Pass the result to the callback function
+    },
+    error: function() {
+      console.error("There was an error while searching.");
     }
-    var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
-    url += "?function=" + action;
-    url += "&" + $.param(searchData);
+  });
+}
 
-    $.ajax({
-      url: url,
-      dataType: "jsonp",
-      success: function(response) {
-          var searchResult = {
-            found: response.found,
-            index: response.index
-          }
-          
-      //   Object.entries(response).forEach(function([key, value]) {
-     //     alert(key + ": " + value);
-     //   });
-
-         return false;
-      },
-      error: function() {
-        console.error("There was an error while searching.");
-      }
-    });
 
 }
