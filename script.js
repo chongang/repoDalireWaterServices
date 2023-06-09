@@ -32,7 +32,7 @@ $(document).ready(function() {
       cbmrate: $('#cbmrate').val(),
       cbm: $('#cbm').val(),
       cost: $('#cost').val(),
-      date: $('#date').val(),
+      date: Date.now(), //$('#date').val(),
       contactno: $('#contactno').val(),
       email: $('#email').val(),
       address: $('#address').val()
