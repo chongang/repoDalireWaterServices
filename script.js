@@ -10,7 +10,11 @@ $(document).ready(function() {
     if (action==="saveReading"){
       //var objFound = new Object();
         var objFound = searchValue(meterno,"A:A","ReadingDB");
-      alert("isFound:"+ objFound.found);
+      
+         Object.entries(objFound).forEach(function([key, value]) {
+          alert(key + "objF: " + value);
+        });
+      
       if (objFound.found){
         alert("Meter No. [" + meterno + "] is already saved, please to delete previous data, and try again");
         return;
@@ -103,9 +107,9 @@ function searchValue(Search,Range,SheetName){
             index: response.index
           }
           
-         Object.entries(response).forEach(function([key, value]) {
-          alert(key + ": " + value);
-        });
+      //   Object.entries(response).forEach(function([key, value]) {
+     //     alert(key + ": " + value);
+     //   });
 
          return searchResult;
       },
