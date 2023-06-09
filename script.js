@@ -85,25 +85,29 @@ function handleResponse(response,action) {
 
 function searchValue(Search,Range,SheetName){
     action = "searchValue";
-    var formData = {
+    var searchData = {
         sheetname: SheetName,
         range: Range,
         search: Search
     }
     var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
     url += "?function=" + action;
-    url += "&" + $.param(formData);
+    url += "&" + $.param(searchData);
 
     $.ajax({
       url: url,
       dataType: "jsonp",
       success: function(response) {
-       
+          var searchResult = {
+            found: response.found,
+            index: response.index
+          }
+          
          Object.entries(response).forEach(function([key, value]) {
           alert(key + ": " + value);
         });
-        alert("Iffdfd:" + response.found);
-         return response;
+
+         return searchResult;
       },
       error: function() {
         console.error("There was an error while searching.");
