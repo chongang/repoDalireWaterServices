@@ -111,7 +111,7 @@ function searchValue(Search,Range,SheetName){
      //     alert(key + ": " + value);
      //   });
 
-         return searchResult;
+         return false;
       },
       error: function() {
         console.error("There was an error while searching.");
