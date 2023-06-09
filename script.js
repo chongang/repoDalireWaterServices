@@ -1,3 +1,5 @@
+var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
+
 $(document).ready(function() {
   $("#myForm").on("submit",function(event){
     event.preventDefault(); // Prevent the form from submitting normally
@@ -38,7 +40,7 @@ $(document).ready(function() {
       address: $('#address').val()
     };
         
-    var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
+   // var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
     url += "?function=" + action;
     url += "&" + $.param(formData);
 
@@ -95,7 +97,7 @@ function searchValue(Search, Range, SheetName, callback) {
     range: Range,
     search: Search
   };
-  var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
+ // var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
   url += "?function=" + action;
   url += "&" + $.param(searchData);
 
