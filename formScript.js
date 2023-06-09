@@ -3,13 +3,13 @@ function initForm(){
   
 // Add an event listener for the input of meter ID
   var inputMeternumber = document.getElementById("meternumber");
-  input.addEventListener(inputMeternumber, function() {
+  inputMeternumber.addEventListener("input", function() {
     eventMeterNumberChange();
   });
   
 // Add an event listener for the input of Current Month
   var inputCurmonth = document.getElementById("curmonth");
-  input.addEventListener(inputCurmonth, function() {
+  inputCurmonth.addEventListener("input", function() {
     eventCurrentMonthChange();
   });
   
