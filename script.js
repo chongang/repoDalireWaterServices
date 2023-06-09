@@ -114,6 +114,3 @@ function searchValue(Search, Range, SheetName, callback) {
     }
   });
 }
-
-
-}
