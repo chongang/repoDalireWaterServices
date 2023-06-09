@@ -16,6 +16,17 @@ function showTab(tabName) {
   event.currentTarget.classList.add('active');
 }
 
+function updateButtonState() {
+  var inputElement = document.getElementById("meternumber");
+  var buttonElement = document.getElementById("getAccount");
+  
+  if (inputElement.value.length < 6) {
+    buttonElement.disabled = true;
+  } else {
+    buttonElement.disabled = false;
+  }
+}
+
 function calcCBM(){
   // get values
  var cbmrate = document.getElementById("cbmrate").value;
