@@ -10,7 +10,7 @@ $(document).ready(function() {
     if (action==="saveReading"){
       //var objFound = new Object();
         var objFound = searchValue(meterno,"A:A","ReadingDB");
-      
+      alert("objF: " + objFound);
          Object.entries(objFound).forEach(function([key, value]) {
           alert(key + "objF: " + value);
         });
