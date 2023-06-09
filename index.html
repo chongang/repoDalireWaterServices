@@ -13,7 +13,8 @@
     window.onload = function(){
       
         var input = document.getElementById("date");
-        var currentDate = new Date();
+       // var currentDate = new Date();
+        var currentDate = Date.now();
         // Format the date as YYYY-MM-DD
         var formattedDate = currentDate.toISOString().split("T")[0];
         input.value = formattedDate;
