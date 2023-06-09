@@ -27,6 +27,10 @@ function calcCBM(){
 //  alert("prvmonth:" + prvmonth);
   
   //calculate
+  if (curmonth < prvmonth){
+    alert("Current Reading cannot be lower than Previous Reading!");
+    return;
+  }
  var cbm = (curmonth-prvmonth)
  var cost = (cbm*cbmrate)
  
