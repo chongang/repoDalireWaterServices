@@ -5,6 +5,11 @@ function initForm(){
     eventMeterNumberChange();
   });
   
+// Add an event listener for the input of Current Month
+  input.addEventListener("curmonth", function() {
+    eventCurrentMonthChange();
+  });
+  
 }
 
 function showTab(tabName) {
@@ -36,15 +41,16 @@ function eventMeterNumberChange() {
   }
 }
 
+function eventCurrentMonthChange() {
+  var buttonElement = document.getElementById("calculateCBM");
+    buttonElement.disabled = false;
+}
+
 function calcCBM(){
   // get values
  var cbmrate = document.getElementById("cbmrate").value;
  var curmonth = document.getElementById("curmonth").value;
  var prvmonth = document.getElementById("prvmonth").value;
-  
-//  alert("cbmrate:" + cbmrate);
-//  alert("curmonth:" + curmonth);
-//  alert("prvmonth:" + prvmonth);
   
   //calculate
   if (curmonth < prvmonth){
@@ -54,9 +60,8 @@ function calcCBM(){
  var cbm = (curmonth-prvmonth)
  var cost = (cbm*cbmrate)
  
- //alert("cbm:" + cbm);
-  //alert("cost:" + cost);
  //set values
   document.getElementById("cbm").value = cbm;
   document.getElementById("cost").value = cost;
+  document.getElementById("calculateCBM").disabled = true;
 }
