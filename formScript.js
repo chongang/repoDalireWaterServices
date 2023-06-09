@@ -63,7 +63,7 @@ function calcCBM(){
  var cbmrate = document.getElementById("cbmrate").value;
  var curmonth = document.getElementById("curmonth").value;
  var prvmonth = document.getElementById("prvmonth").value;
- var calcNote = document.getElementById("calcNote").value;
+ var calcNote = document.getElementById("calcNote");
   
   
   //calculate
