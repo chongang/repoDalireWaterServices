@@ -1,14 +1,14 @@
 function initForm(){
   
 // Add an event listener for the input of meter ID
-  var input = document.getElementById("meternumber");
-  input.addEventListener(input, function() {
+  var inputMeternumber = document.getElementById("meternumber");
+  input.addEventListener(inputMeternumber, function() {
     eventMeterNumberChange();
   });
   
 // Add an event listener for the input of Current Month
-  var input = document.getElementById("curmonth");
-  input.addEventListener("curmonth", function() {
+  var inputCurmonth = document.getElementById("curmonth");
+  input.addEventListener(inputCurmonth, function() {
     eventCurrentMonthChange();
   });
   
@@ -49,6 +49,8 @@ function eventMeterNumberChange() {
   } else {
     buttonElement.disabled = false;
   }
+  
+  alert("done eventMeterNumberChange");
 }
 
 function eventCurrentMonthChange() {
