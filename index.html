@@ -11,15 +11,8 @@
   <script>
     //initialize the page
     window.onload = function(){
-      
-        var input = document.getElementById("date");
-        var currentDate = new Date();
-        // Format the date as YYYY-MM-DD
-        var formattedDate = currentDate.toISOString().split("T")[0];
-        input.value = formattedDate;
-      
+        initForm(); // initialize listeners and preset values
         showTab('tab1');
-        initForm(); // initialize listeners
     };  
   </script>
 </head>
