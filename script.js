@@ -10,10 +10,10 @@ $(document).ready(function() {
     
 
   if (action === "saveReading") {
-  searchValue(meterno, "A:A", "ReadingDB", function(objFound) {
+    var objFound = searchValue(meterno, "A:A", "ReadingDB", function(objFound) {
     alert("objF: " + objFound);
     Object.entries(objFound).forEach(function([key, value]) {
-      alert(key + "objFnd: " + value);
+      alert(key + " objFnd: " + value);
     });
 
     if (objFound.found) {
