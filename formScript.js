@@ -1,4 +1,5 @@
 function initForm(){
+  alert("initializing...");
   
 // Add an event listener for the input of meter ID
   var inputMeternumber = document.getElementById("meternumber");
