@@ -64,15 +64,17 @@ function calcCBM(){
  var curmonth = document.getElementById("curmonth").value;
  var prvmonth = document.getElementById("prvmonth").value;
  var calcNote = document.getElementById("calcNote");
-  
+ var saveReading = document.getElementById("saveReading");
   
   //calculate
   if (curmonth < prvmonth){
     calcNote.style.display = "block";
+    saveReading.disabled = true;
     calcNote.value = "Current Reading cannot be lower than Previous Reading!";
     return;
   } else {
     calcNote.style.display = "none";
+    saveReading.disabled = false;
   }
   
  var cbm = (curmonth-prvmonth)
@@ -81,5 +83,5 @@ function calcCBM(){
  //set values
   document.getElementById("cbm").value = cbm;
   document.getElementById("cost").value = cost;
-  document.getElementById("calculateCBM").disabled = true;
+ // document.getElementById("calculateCBM").disabled = true;
 }
