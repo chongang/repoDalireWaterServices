@@ -1,7 +1,11 @@
 var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
-var meterno = $('#meternumberbase').val()+$('#meternumber').val()
+var meterno;
 
 $(document).ready(function() {
+  $('#meternumberbase, #meternumber').on('input', function() {
+    meterno = $('#meternumberbase').val() + $('#meternumber').val();
+  });
+  
   $("#myForm").on("submit",function(event){
     event.preventDefault(); // Prevent the form from submitting normally
 
