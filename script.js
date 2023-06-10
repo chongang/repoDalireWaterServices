@@ -73,7 +73,8 @@ function handleResponse(response,action) {
             $('#email').val(response.email);
             $('#prvmonth').val(response.lastreading);
             $('#curmonth').val(response.lastreading); //set same initially
-            $('#cbmrate').val(response.rateamount); //set same initially
+            $('#cbmrate').val(response.rateamount);
+            $('#remarks').val(response.remarks);
             return !readonly; // Toggle the readonly state
           });
   }
