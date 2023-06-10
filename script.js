@@ -82,9 +82,9 @@ function handleResponse(response,action) {
   // Reset the form after successful submission
   //$('#myForm')[0].reset();
   if (response.returnmsg === undefined){
-    alert("Success!");
+    showDWSMessageBox("Success!");
   }else{
-    alert(response.returnmsg);
+    showDWSMessageBox(response.returnmsg);
   }
     
 }
