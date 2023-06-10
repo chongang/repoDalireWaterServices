@@ -10,10 +10,10 @@ $(document).ready(function() {
 
       if (action === "saveReading") {
         var objFound = searchValue(meterno, "A:A", "ReadingDB", function(objFound) {
-        alert("objF: " + objFound);
-        Object.entries(objFound).forEach(function([key, value]) {
-          alert(key + " objFnd: " + value);
-        });
+        //alert("objF: " + objFound);
+        //Object.entries(objFound).forEach(function([key, value]) {
+          //alert(key + " objFnd: " + value);
+        //});
 
         if (objFound.found) {
           alert("Meter No. [" + meterno + "] is already saved. Please delete the previous data and try again.");
