@@ -9,12 +9,9 @@ $(document).ready(function() {
     var action = clickedButton.data("action");
     var terminateExecution = false;
     
+      // check if meter number has been saved previously
       if (action === "saveReading") {
         var objFound = searchValue(meterno, "A:A", "ReadingDB", function(objFound) {
-        //alert("objF: " + objFound);
-        //Object.entries(objFound).forEach(function([key, value]) {
-          //alert(key + " objFnd: " + value);
-        //});
           if (objFound.found) {
             alert("Meter No. [" + meterno + "] is already saved. Please delete the previous data and try again.");
             terminateExecution = true;
@@ -37,7 +34,8 @@ $(document).ready(function() {
       date: Date.now(), //$('#date').val(),
       contactno: $('#contactno').val(),
       email: $('#email').val(),
-      address: $('#address').val()
+      address: $('#address').val(),
+      remarks: $('#remarks').val()
     };
         
     var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
