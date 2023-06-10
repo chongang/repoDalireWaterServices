@@ -87,3 +87,16 @@ function calcCBM(){
   document.getElementById("cost").value = cost;
  // document.getElementById("calculateCBM").disabled = true;
 }
+
+
+function showDWSMessageBox(message) {
+  var messageBox = document.getElementById("customMessageBox");
+  var messageText = document.getElementById("messageText");
+  messageText.textContent = message;
+  messageBox.style.display = "flex";
+}
+
+function hideDWSMessageBox() {
+  var messageBox = document.getElementById("customMessageBox");
+  messageBox.style.display = "none";
+}
