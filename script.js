@@ -1,14 +1,11 @@
 var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
-var meterno;
 
 $(document).ready(function() {
-  $('#meternumberbase, #meternumber').on('input', function() {
-    meterno = $('#meternumberbase').val() + $('#meternumber').val();
-  });
   
   $("#myForm").on("submit",function(event){
     event.preventDefault(); // Prevent the form from submitting normally
-
+    meterno = $('#meternumberbase').val() + $('#meternumber').val();
+    
     var clickedButton = $(document.activeElement);
     var action = clickedButton.data("action");
     alert("processing meter no.1 " + meterno);
