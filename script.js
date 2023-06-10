@@ -24,7 +24,7 @@ $(document).ready(function() {
     }
 
     
-    var meterno = $('#meternumberbase').val()+$('#meternumber').val();
+    //var meterno = $('#meternumberbase').val()+$('#meternumber').val();
     alert("processing meter no.2" + meterno);
     var formData = {
       meternumber: meterno,
@@ -62,9 +62,9 @@ $(document).ready(function() {
 
 function handleResponse(response,action) {
   // Your code here to handle the response
-  //Object.entries(response).forEach(function([key, value]) {
-  //  alert(key + ": " + value);
-  //});
+  Object.entries(response).forEach(function([key, value]) {
+    alert(key + ": " + value);
+  });
   
   //Get Account
   if (action === "getAccount") {
