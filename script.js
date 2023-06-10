@@ -3,25 +3,26 @@ $(document).ready(function() {
   
   $("#myForm").on("submit",function(event){
     event.preventDefault(); // Prevent the form from submitting normally
-    meterno = $('#meternumberbase').val() + $('#meternumber').val();
     
+    var meterno = $('#meternumberbase').val() + $('#meternumber').val();
     var clickedButton = $(document.activeElement);
     var action = clickedButton.data("action");
-
+    var terminateExecution = false;
+    
       if (action === "saveReading") {
         var objFound = searchValue(meterno, "A:A", "ReadingDB", function(objFound) {
         //alert("objF: " + objFound);
         //Object.entries(objFound).forEach(function([key, value]) {
           //alert(key + " objFnd: " + value);
         //});
+          if (objFound.found) {
+            alert("Meter No. [" + meterno + "] is already saved. Please delete the previous data and try again.");
+            terminateExecution = true;
+          }
+        });
+      }
 
-        if (objFound.found) {
-          alert("Meter No. [" + meterno + "] is already saved. Please delete the previous data and try again.");
-          return;
-        }
-      });
-    }
-
+    if (terminateExecution){return;};
     
     //var meterno = $('#meternumberbase').val()+$('#meternumber').val();
     var formData = {
