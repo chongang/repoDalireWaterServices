@@ -7,7 +7,7 @@ $(document).ready(function() {
     var clickedButton = $(document.activeElement);
     var action = clickedButton.data("action");
     var meterno = $('#meternumberbase').val()+$('#meternumber').val()
-    
+    alert("processing meter no.1" + meterno);
 
       if (action === "saveReading") {
         var objFound = searchValue(meterno, "A:A", "ReadingDB", function(objFound) {
@@ -25,7 +25,7 @@ $(document).ready(function() {
 
     
     var meterno = $('#meternumberbase').val()+$('#meternumber').val();
-    
+    alert("processing meter no.2" + meterno);
     var formData = {
       meternumber: meterno,
       accountno: $('#accountno').val(),
