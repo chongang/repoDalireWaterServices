@@ -1,4 +1,3 @@
-//var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
 
 $(document).ready(function() {
   
@@ -8,7 +7,6 @@ $(document).ready(function() {
     
     var clickedButton = $(document.activeElement);
     var action = clickedButton.data("action");
-    alert("processing meter no.1 " + meterno);
 
       if (action === "saveReading") {
         var objFound = searchValue(meterno, "A:A", "ReadingDB", function(objFound) {
@@ -26,7 +24,6 @@ $(document).ready(function() {
 
     
     //var meterno = $('#meternumberbase').val()+$('#meternumber').val();
-    alert("processing meter no.2 " + meterno);
     var formData = {
       meternumber: meterno,
       accountno: $('#accountno').val(),
@@ -63,9 +60,9 @@ $(document).ready(function() {
 
 function handleResponse(response,action) {
   // Your code here to handle the response
-  Object.entries(response).forEach(function([key, value]) {
-    alert(key + ": " + value);
-  });
+//  Object.entries(response).forEach(function([key, value]) {
+//    alert(key + ": " + value);
+//  });
   
   //Get Account
   if (action === "getAccount") {
