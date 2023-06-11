@@ -83,11 +83,21 @@ function calcCBM(){
  var cost = (cbm*cbmrate)
  
  //set values
-  document.getElementById("cbm").value = cbm;
-  document.getElementById("cost").value = cost;
+ // document.getElementById("cbm").value = cbm;
+ // document.getElementById("cost").value = cost;
+ setValue("cbm",cbm);
+ setValue("cost",cost);
  // document.getElementById("calculateCBM").disabled = true;
 }
 
+function setValue(elementId,elementValue) {
+  var element = document.getElementById(elementId);
+  if (element.readOnly) {
+    element.readOnly = false;
+    element.value = elementValue;
+    element.readOnly = true;
+  }
+}
 
 function showDWSMessageBox(message) {
   var messageBox = document.getElementById("customMessageBox");
