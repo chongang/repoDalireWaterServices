@@ -10,16 +10,15 @@ $(document).ready(function() {
     var terminateExecution = false;
     
       // check if meter number has been saved previously
+    /*
       if (action === "saveReading") {
         var objFound = searchValue(meterno, "A:A", "ReadingDB", function(objFound) {
           if (objFound.found) {
             showDWSMessageBox("Meter No. [" + meterno + "] is already saved. Please delete the previous data and try again.");
-            terminateExecution = true;
           }
         });
       }
-
-    if (terminateExecution){return;};
+    */
     
     //var meterno = $('#meternumberbase').val()+$('#meternumber').val();
     var formData = {
