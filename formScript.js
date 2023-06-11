@@ -83,10 +83,10 @@ function calcCBM(){
  var cost = (cbm*cbmrate)
  
  //set values
- // document.getElementById("cbm").value = cbm;
- // document.getElementById("cost").value = cost;
- setValue("cbm",cbm);
- setValue("cost",cost);
+  document.getElementById("cbm").value = cbm;
+  document.getElementById("cost").value = cost;
+ //setValue("cbm",cbm);
+ //setValue("cost",cost);
  // document.getElementById("calculateCBM").disabled = true;
 }
 
