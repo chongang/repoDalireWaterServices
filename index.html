@@ -23,9 +23,18 @@
       <div class="message-content">
         <h3 class="message-title">Information</h3>
         <p class="message-text" id="messageText"></p>
-        <button id="messagebutton" onclick="hideDWSMessageBox()">Close</button>
+        <button class="message-button" onclick="hideDWSMessageBox()">Close</button>
       </div>
     </div>
+  
+      <div id="QRReaderWindow" class="custom-message-box">
+         <div class="message-content">
+              <input type="text" id="qrDataInput" />
+              <button id="startScanButton">Start Scan</button>
+              <div id="qrScanner"></div>
+           <button class="message-button" onclick="hideQRReaderWindow()">Close</button>
+        </div>
+      </div>
   
     <div class="container">
     <h1>
@@ -52,11 +61,6 @@
               </div>
           </td>
          </tr>
-          <tr>
-              <input type="text" id="qrDataInput" />
-              <button id="startScanButton">Start Scan</button>
-              <div id="qrScanner"></div>
-          </tr>
        </table>
         
       <label for="name">Account Name:</label>
