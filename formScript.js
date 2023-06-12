@@ -99,7 +99,7 @@ function setValue(elementId,elementValue) {
   }
 }
 
-function showDWSMessageWindow(message) {
+function showDWSMessageBox(message) {
   var messageBox = document.getElementById("customMessageBox");
   var messageText = document.getElementById("messageText");
   messageText.textContent = message;
