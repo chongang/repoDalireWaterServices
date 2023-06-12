@@ -1,4 +1,4 @@
-  // JavaScript
+ // JavaScript
   // Set up the configuration for QuaggaJS
   const config = {
     inputStream: {
@@ -12,7 +12,7 @@
       },
     },
     decoder: {
-      readers: ["ean_reader"],
+      readers: ["qrcode_reader"], // Use qrcode_reader decoder for scanning QR codes
     },
   };
 
