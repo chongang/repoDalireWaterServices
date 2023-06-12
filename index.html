@@ -23,7 +23,7 @@
       <div class="message-content">
         <h3 class="message-title">Information</h3>
         <p class="message-text" id="messageText"></p>
-        <button class="message-button" onclick="hideDWSMessageBox()">Close</button>
+        <button class="message-button" onclick="hideDWSWindow('customMessageBox')">Close</button>
       </div>
     </div>
   
@@ -32,7 +32,7 @@
               <input type="text" id="qrDataInput" />
               <button id="startScanButton">Start Scan</button>
               <div id="qrScanner"></div>
-           <button class="message-button" onclick="hideQRReaderWindow()">Close</button>
+           <button class="message-button" onclick="hideDWSWindow('QRReaderWindow')">Close</button>
         </div>
       </div>
   
@@ -55,7 +55,7 @@
                   <button type="submit" style="height:43px; padding:20px; border:5px; font-size: 16px;" class="icon-button" id="getAccount" data-action="getAccount" type="button">
                     <i class="fas fa-search"></i>
                  </button>
-                  <button type="submit" style="height:43px; padding:20px; border:5px; font-size: 16px;" class="icon-button" id="getAccountQR" data-action="getAccountQR" type="button">
+                  <button type="button" onclick="showDWSWindow('QRReaderWindow')" style="height:43px; padding:20px; border:5px; font-size: 16px;" class="icon-button" id="getAccountQR" data-action="getAccountQR" type="button">
                     <i class="fas fa-qrcode"></i>
                  </button>
               </div>
