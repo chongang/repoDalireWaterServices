@@ -99,14 +99,19 @@ function setValue(elementId,elementValue) {
   }
 }
 
-function showDWSMessageBox(message) {
+function showDWSMessageWindow(message) {
   var messageBox = document.getElementById("customMessageBox");
   var messageText = document.getElementById("messageText");
   messageText.textContent = message;
   messageBox.style.display = "flex";
 }
 
-function hideDWSMessageBox() {
-  var messageBox = document.getElementById("customMessageBox");
+function showDWSWindow(e) {
+  var messageBox = document.getElementById(e);
+  messageBox.style.display = "flex";
+}
+
+function hideDWSWindow(e) {
+  var messageBox = document.getElementById(e);
   messageBox.style.display = "none";
 }
