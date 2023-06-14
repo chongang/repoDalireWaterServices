@@ -19,9 +19,9 @@
 function loadReadingResult(){
 
       var data = [
-        { name: "John", age: 25, city: "New York" },
-        { name: "Jane", age: 30, city: "London" },
-        { name: "Bob", age: 35, city: "Paris" }
+        { MeterNo: "12345", Date: "2023-06-01", PreviousReading: "1000",CurrentReading: "1200", CBMRate: 2.5, CBM: 200,Cost: 500, Remarks: "Sample remarks", IsLastReading: "Yes"  },
+        { MeterNo: "12135", Date: "2023-06-01", PreviousReading: "1000",CurrentReading: "1200", CBMRate: 2.5, CBM: 200,Cost: 500, Remarks: "Sample remarks", IsLastReading: "Yes"  },
+        { MeterNo: "12755", Date: "2023-06-01", PreviousReading: "1000",CurrentReading: "1200", CBMRate: 2.5, CBM: 200,Cost: 500, Remarks: "Sample remarks", IsLastReading: "Yes"  }
       ];
 
       // Get a reference to the table element
