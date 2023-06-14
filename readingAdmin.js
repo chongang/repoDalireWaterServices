@@ -45,5 +45,11 @@ function loadReadingResult(){
           cell.innerHTML = data[i][key];
         }
       }
-
+  
+    var dllink = document.getElementById("downloadExcelLink");
+     var downloadDetails = generateExcelDownloadUrl();
+      var downloadLink = '<a href="' + downloadDetails.downloadUrl + '" download="' + downloadDetails.fileName + '">Download Excel File</a>';
+      dllink.innerHTML = showDownloadLink();
 }
+
+
