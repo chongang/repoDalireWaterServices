@@ -2,13 +2,30 @@
 <html>
 <head>
   <title>Control Panel</title>
-  <style>
-    /* Style for the control panel */
-    .control-panel {
-      margin: 20px;
+<style>
+    /* Reset default margins and paddings */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    
-    /* Style for the buttons */
+
+    /* Body styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+
+    /* Container styles */
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #ffffff;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Buttons styles */
     .button {
       display: inline-block;
       padding: 10px 20px;
@@ -17,25 +34,32 @@
       text-decoration: none;
       border-radius: 5px;
       margin-right: 10px;
+      transition: background-color 0.3s ease;
     }
-    
-    /* Style for the table */
+
+    .button:hover {
+      background-color: #135f99;
+    }
+
+    /* Table styles */
     table {
       width: 100%;
       border-collapse: collapse;
+      margin-top: 20px;
     }
-    
+
     th, td {
-      padding: 8px;
+      padding: 10px;
       text-align: left;
       border-bottom: 1px solid #ddd;
     }
-    
+
     th {
       background-color: #f2f2f2;
+      font-weight: bold;
     }
-    
-    /* Style for the download button */
+
+    /* Download button styles */
     .download-button {
       display: inline-block;
       padding: 10px 20px;
@@ -43,7 +67,12 @@
       color: white;
       text-decoration: none;
       border-radius: 5px;
-      margin-top: 10px;
+      margin-top: 20px;
+      transition: background-color 0.3s ease;
+    }
+
+    .download-button:hover {
+      background-color: #3e8e41;
     }
   </style>
 </head>
@@ -55,7 +84,7 @@
     <a class="button" href="#">Preview Reading</a>
 
     <!-- Table -->
-    <table>
+<table>
       <tr>
         <th>MeterNo</th>
         <th>Date</th>
@@ -67,7 +96,29 @@
         <th>Remarks</th>
         <th>IsLastReading</th>
       </tr>
-      <!-- Table rows will be dynamically populated with data -->
+      <tr>
+        <td>12345</td>
+        <td>2023-06-01</td>
+        <td>1000</td>
+        <td>1200</td>
+        <td>2.5</td>
+        <td>200</td>
+        <td>500</td>
+        <td>Sample remarks</td>
+        <td>Yes</td>
+      </tr>
+      <tr>
+        <td>67890</td>
+        <td>2023-06-02</td>
+        <td>1500</td>
+        <td>1800</td>
+        <td>2.2</td>
+        <td>300</td>
+        <td>660</td>
+        <td>Another remark</td>
+        <td>No</td>
+      </tr>
+      <!-- Add more rows with sample data here -->
     </table>
 
     <!-- Download button -->
