@@ -59,7 +59,7 @@ function downloadTable(){
 alert("Got in!");
   // Export the table to Excel
   $(tableSelector).table2excel({
-    filename: 'ReadingData.xlsx' // Specify the desired file name with the .xlsx extension
+    filename: 'C:\\Users\\DILG_NCR\\Downloads' // Specify the desired file name with the .xlsx extension
   });
  alert("downloaded!");
 }
