@@ -52,4 +52,13 @@ function loadReadingResult(){
       dllink.innerHTML = showDownloadLink();
 }
 
+function downloadTable(){
+  // Specify the ID or class of the HTML table you want to convert
+  var tableSelector = '#yourTableID';
 
+  // Export the table to Excel
+  $(tableSelector).table2excel({
+    filename: 'ReadingData.xlsx' // Specify the desired file name with the .xlsx extension
+  });
+ 
+}
