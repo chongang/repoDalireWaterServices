@@ -9,12 +9,12 @@
 </head>
 <body>
   <div class="container">
-    <form>
+    <form id="myForm">
       <div class="control-panel">
         <!-- Buttons -->
-        <a class="button" href="#">New Reading</a>
-        <a class="button" href="#">Edit Reading</a>
-        <a class="button" onclick="loadReadingResult()">Preview Reading</a>
+        <button class="button" href="#">New Reading</button>
+        <button class="button" href="#">Edit Reading</button>
+        <button type="submit" class="button" id="loadReadingResult">Preview Reading</button>
         <label for="myCheckbox">
           <input type="checkbox" id="myCheckbox" checked>
           Latest Data only
@@ -24,7 +24,7 @@
           <!-- to be filled up by program-->
         </table>
         <!-- Download button -->
-        <a class="download-button" onclick="downloadTable()">Download Reading Table</a>
+        <button type="submit" class="download-button" id="downloadTable">Download Reading Table</button>
         
       </div>
      </form>
