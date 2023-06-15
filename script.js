@@ -1,6 +1,12 @@
 
 $(document).ready(function() {
   
+  //For Button Event from Admin
+  $("#adminForm").on("submit",function(event){
+    event.preventDefault(); // Prevent the form from submitting normally
+  }
+                     
+  //For button event form App
   $("#myForm").on("submit",function(event){
     event.preventDefault(); // Prevent the form from submitting normally
     
