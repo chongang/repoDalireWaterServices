@@ -17,15 +17,15 @@
 
 
 function loadReadingResult(){
-    var data = getSheetData("ReadingDB");
+   // var dataValues = getSheetData("ReadingDB");
   alert("got in!");
-     // var data = [
-     //   { MeterNo: "12345", Date: "2023-06-01", PreviousReading: "1000",CurrentReading: "1200", CBMRate: 2.5, CBM: 200,Cost: 500, Remarks: "Sample remarks", IsLastReading: "Yes"  },
-      //  { MeterNo: "12135", Date: "2023-06-01", PreviousReading: "1000",CurrentReading: "1200", CBMRate: 2.5, CBM: 200,Cost: 500, Remarks: "Sample remarks", IsLastReading: "Yes"  },
-      //  { MeterNo: "12755", Date: "2023-06-01", PreviousReading: "1000",CurrentReading: "1200", CBMRate: 2.5, CBM: 200,Cost: 500, Remarks: "Sample remarks", IsLastReading: "Yes"  }
-     // ];
+      var dataValues = [
+        { MeterNo: "12345", Date: "2023-06-01", PreviousReading: "1000",CurrentReading: "1200", CBMRate: 2.5, CBM: 200,Cost: 500, Remarks: "Sample remarks", IsLastReading: "Yes"  },
+        { MeterNo: "12135", Date: "2023-06-01", PreviousReading: "1000",CurrentReading: "1200", CBMRate: 2.5, CBM: 200,Cost: 500, Remarks: "Sample remarks", IsLastReading: "Yes"  },
+        { MeterNo: "12755", Date: "2023-06-01", PreviousReading: "1000",CurrentReading: "1200", CBMRate: 2.5, CBM: 200,Cost: 500, Remarks: "Sample remarks", IsLastReading: "Yes"  }
+      ];
   
-  Object.entries(data).forEach(function([key, value]) {
+  Object.entries(dataValues).forEach(function([key, value]) {
     alert(key + ": " + value);
   });
   
