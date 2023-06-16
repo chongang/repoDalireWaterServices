@@ -134,7 +134,7 @@ function getSheetData(SheetName) {
     url: url,
     dataType: "jsonp",
     success: function(response) {
-      callback(response); // Pass the result to the callback function
+      return response; //callback(response); // Pass the result to the callback function
     },
     error: function() {
       console.error("There was an error while searching.");
