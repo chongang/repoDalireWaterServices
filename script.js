@@ -123,9 +123,7 @@ function searchValue(Search, Range, SheetName, callback) {
 function getSheetData(SheetName) {
   var action = "getSheetData";
   var edata = {
-    sheetname: SheetName,
-    range: Range,
-    search: Search
+    sheetname: SheetName
   };
   
   var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
