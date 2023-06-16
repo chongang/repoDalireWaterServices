@@ -29,10 +29,10 @@ function loadReadingResult(){
     alert(key + ": " + value);
   });
   
-      var spreadsheet = SpreadsheetApp.openById('your_spreadsheet_id');
-      var sheet = spreadsheet.getSheetByName('your_sheet_name');
-      var dataRange = sheet.getDataRange();
-      var dataValues = dataRange.getValues();
+    //  var spreadsheet = SpreadsheetApp.openById('your_spreadsheet_id');
+   //   var sheet = spreadsheet.getSheetByName('your_sheet_name');
+   //   var dataRange = sheet.getDataRange();
+    //  var dataValues = dataRange.getValues();
 
       var headers = dataValues[0];
       var data = [];
