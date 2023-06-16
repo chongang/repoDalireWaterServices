@@ -1,13 +1,7 @@
 
 $(document).ready(function() {
   
-  /*
-  //For Button Event from Admin
-  $("#adminForm").on("submit",function(event){
-    event.preventDefault(); // Prevent the form from submitting normally
-  }
-       */
-  
+ 
   //For button event form App
   $("#myForm").on("submit",function(event){
     event.preventDefault(); // Prevent the form from submitting normally
@@ -118,6 +112,31 @@ function searchValue(Search, Range, SheetName, callback) {
         index: response.index
       };
       callback(searchResult); // Pass the result to the callback function
+    },
+    error: function() {
+      console.error("There was an error while searching.");
+    }
+  });
+}
+
+
+function getSheetData(SheetName) {
+  var action = "getSheetData";
+  var edata = {
+    sheetname: SheetName,
+    range: Range,
+    search: Search
+  };
+  
+  var url = "https://script.google.com/macros/s/AKfycbwhZ02JFw86QYux8LXF5DR_Nu3vchRBRGlTSDJjFCmj1efM81DaKcvV8LUg7hyungu-sw/exec";
+  url += "?function=" + action;
+  url += "&" + $.param(edata);
+
+  $.ajax({
+    url: url,
+    dataType: "jsonp",
+    success: function(response) {
+      callback(response); // Pass the result to the callback function
     },
     error: function() {
       console.error("There was an error while searching.");
