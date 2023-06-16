@@ -61,7 +61,8 @@ function loadReadingResult(){
       }
 
       tableHtml += '</table>';
-
+  
+alert(tableHtml);
       // Inject the table HTML into an HTML element on your webpage
       document.getElementById('tableContainer').innerHTML = tableHtml;
 }
