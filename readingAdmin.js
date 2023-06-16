@@ -29,33 +29,41 @@ function loadReadingResult(){
     alert(key + ": " + value);
   });
   
-      // Get a reference to the table element
-      var table = document.getElementById("myTable");
+      var spreadsheet = SpreadsheetApp.openById('your_spreadsheet_id');
+      var sheet = spreadsheet.getSheetByName('your_sheet_name');
+      var dataRange = sheet.getDataRange();
+      var dataValues = dataRange.getValues();
 
-      // Generate table header row
-      var header = table.createTHead();
-      var headerRow = header.insertRow();
-      for (var key in data[0]) {
-        var th = document.createElement("th");
-        th.innerHTML = key;
-        headerRow.appendChild(th);
-      }
+      var headers = dataValues[0];
+      var data = [];
 
-      // Generate table body rows
-      var body = table.createTBody();
-      for (var i = 0; i < data.length; i++) {
-        var row = body.insertRow();
-        for (var key in data[i]) {
-          var cell = row.insertCell();
-          cell.innerHTML = data[i][key];
+      for (var i = 1; i < dataValues.length; i++) {
+        var rowData = {};
+        for (var j = 0; j < headers.length; j++) {
+          rowData[headers[j]] = dataValues[i][j];
         }
+        data.push(rowData);
       }
-  /*
-    var dllink = document.getElementById("downloadExcelLink");
-     var downloadDetails = generateExcelDownloadUrl();
-      var downloadLink = '<a href="' + downloadDetails.downloadUrl + '" download="' + downloadDetails.fileName + '">Download Excel File</a>';
-      dllink.innerHTML = showDownloadLink();
-      */
+
+      var tableHtml = '<table>';
+      tableHtml += '<tr>';
+      for (var k = 0; k < headers.length; k++) {
+        tableHtml += '<th>' + headers[k] + '</th>';
+      }
+      tableHtml += '</tr>';
+
+      for (var l = 0; l < data.length; l++) {
+        tableHtml += '<tr>';
+        for (var m = 0; m < headers.length; m++) {
+          tableHtml += '<td>' + data[l][headers[m]] + '</td>';
+        }
+        tableHtml += '</tr>';
+      }
+
+      tableHtml += '</table>';
+
+      // Inject the table HTML into an HTML element on your webpage
+      document.getElementById('tableContainer').innerHTML = tableHtml;
 }
 
 function downloadTable(){
