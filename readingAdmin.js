@@ -67,13 +67,46 @@ alert(tableHtml);
       document.getElementById('tableContainer').innerHTML = tableHtml;
 }
 
-function downloadTable(){
-  // Specify the ID or class of the HTML table you want to convert
-  var tableSelector = 'myTable';
-alert("Got in!");
-  // Export the table to Excel
-  $(tableSelector).table2excel({
-    filename: 'C:\\Users\\DILG_NCR\\Downloads' // Specify the desired file name with the .xlsx extension
+
+// Load the API client and auth2 library
+gapi.load('client:auth2', initReadinAdmin);
+function initReadinAdmin(){
+
+   gapi.client.init({
+      apiKey: 'AIzaSyATxIfMaydkkFzjFUBz7uwAw-9xOLxg4yg',
+      clientId: '325341223761-pf5ti9jbtt99gkmgsqg8f6b109e85scp.apps.googleusercontent.com',
+      discoveryDocs: ['https://www.googleapis.com/discovery/v1/apis/drive/v3/rest'],
+      scope: 'https://www.googleapis.com/auth/drive.readonly'
+    }).then(function() {
+      // Authorization successful
+      // Call the function to download the Google Sheet
+      downloadSheet();
+    }, function(error) {
+      // Authorization failed
+      console.error('Error initializing Google Drive API:', error);
+    });
+}
+
+function downloadSheet() {
+  // ID of the Google Sheet
+  const sheetId = '1qGj_GDant2py8NXYW1q7GagZxkz2Gz7NwhoFnREeA0s';
+  //const sheetId = 'YOUR_SHEET_ID';
+  // Set the MIME type to download as Excel (.xlsx)
+  const mimeType = 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet';
+
+  gapi.client.drive.files.export({
+    fileId: sheetId,
+    mimeType: mimeType
+  }).then(function(response) {
+    const fileData = response.body;
+    const fileName = 'sheet.xlsx'; // Change the file name if needed
+
+    // Create a download link and trigger the download
+    const link = document.createElement('a');
+    link.href = 'data:' + mimeType + ';base64,' + fileData;
+    link.download = fileName;
+    link.click();
+  }, function(error) {
+    console.error('Error downloading Google Sheet:', error);
   });
- alert("downloaded!");
 }
