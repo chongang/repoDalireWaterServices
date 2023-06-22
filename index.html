@@ -13,7 +13,7 @@
     //initialize the page
     window.onload = function(){
         initForm(); // initialize listeners and preset values
-       // showTab('tab1');
+        showTab('tab1');
     };  
   </script>
 </head>
@@ -31,9 +31,10 @@
          <div class="message-content">
               <input type="text" id="qrDataInput" />
               <button id="startScanButton">Start Scan</button>
-              <video id="qrScanner"></video>
+              <div id="qrScanner"></div>
            <button class="message-button" onclick="hideDWSWindow('QRReaderWindow')">Close</button>
         </div>
+      </div>
   
     <div class="container">
     <h1>
@@ -189,14 +190,12 @@
   <script src="script.js"></script>
   <!--script src="scriptGetData.js"></script-->
   <script src="formScript.js"></script>
-
-        
-   <!--for QR Reading
+  
+   <!--for QR Reading-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quagga/dist/quagga.min.js"></script>
   <script src="scriptQR.js"></script>
--->
-
+  
 </body>
 </html>
 
