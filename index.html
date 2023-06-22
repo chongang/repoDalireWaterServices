@@ -208,10 +208,14 @@
   document.getElementById('startScanButton').addEventListener('click', function () {
     Instascan.Camera.getCameras()
       .then(function (cameras) {
-        if (cameras.length > 0) {
-          scanner.start(cameras[0]);
+        const rearCamera = cameras.find(function (camera) {
+          return camera.facing === 'environment';
+        });
+        
+        if (rearCamera) {
+          scanner.start(rearCamera);
         } else {
-          console.error('No cameras found.');
+          console.error('Rear camera not found.');
         }
       })
       .catch(function (error) {
@@ -223,8 +227,3 @@
 </body>
 </html>
 
-<!--
-DeployID: AKfycbz9wyOZaUxtE9hJb6tAK3u-TJh1qhp9OBAJBxgklA07DimIw9c-nThr9xIs9uqLDLz1WQ
-WebAppURL: https://script.google.com/macros/s/AKfycbz9wyOZaUxtE9hJb6tAK3u-TJh1qhp9OBAJBxgklA07DimIw9c-nThr9xIs9uqLDLz1WQ/exec
-AppScript: https://script.google.com/home/projects/1pL7sf_PsVfPf9P_DdTLB_MIl0A6-I0eE73jeGaejnWG185sM-0Q5sRLO/edit
--->
