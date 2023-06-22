@@ -32,6 +32,7 @@
               <input type="text" id="qrDataInput" />
               <button id="startScanButton">Start Scan</button>
               <video id="qrScanner"></video>
+           <button id="toggleCameraButton" disabled>Toggle Camera</button>
            <button class="message-button" onclick="hideDWSWindow('QRReaderWindow')">Close</button>
         </div>
       </div>
@@ -196,27 +197,47 @@
 <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 <script>
   // JavaScript
-  const scanner = new Instascan.Scanner({ video: document.getElementById('qrScanner') });
+  let scanner;
+  let currentCamera;
 
-  // Listen for a successful scan
-  scanner.addListener('scan', function (content) {
-    document.getElementById('qrDataInput').value = content;
-    scanner.stop();
-  });
+  // Initialize the scanner
+  function initScanner(camera) {
+    scanner = new Instascan.Scanner({ video: document.getElementById('qrScanner'), mirror: false });
+    scanner.addListener('scan', function (content) {
+      document.getElementById('qrDataInput').value = content;
+      scanner.stop();
+    });
+    scanner.start(camera);
+  }
 
   // Trigger the scanning process when the button is clicked
   document.getElementById('startScanButton').addEventListener('click', function () {
     Instascan.Camera.getCameras()
       .then(function (cameras) {
-        const rearCamera = cameras.find(function (camera) {
-          return camera.facing === 'environment';
-        });
-        
-        if (rearCamera) {
-          scanner.start(rearCamera);
+        if (cameras.length > 0) {
+          currentCamera = cameras[0];
+          initScanner(currentCamera);
+          document.getElementById('toggleCameraButton').disabled = false;
         } else {
-          console.error('Rear camera not found.');
+          console.error('No cameras found.');
         }
+      })
+      .catch(function (error) {
+        console.error('Error accessing cameras:', error);
+      });
+  });
+
+  // Toggle the camera when the button is clicked
+  document.getElementById('toggleCameraButton').addEventListener('click', function () {
+    Instascan.Camera.getCameras()
+      .then(function (cameras) {
+        const nextCameraIndex = (cameras.findIndex(function (camera) {
+          return camera.id === currentCamera.id;
+        }) + 1) % cameras.length;
+
+        currentCamera = cameras[nextCameraIndex];
+        scanner.stop();
+        initScanner(currentCamera);
       })
       .catch(function (error) {
         console.error('Error accessing cameras:', error);
