@@ -29,8 +29,8 @@
   
       <div id="QRReaderWindow" class="custom-message-box">
          <div class="message-content">
-            <input type="text" id="qrDataInput" />
-            <button id="startScanButton">Start Scan</button>
+            <!--input type="text" id="qrDataInput" /-->
+            <!--button id="startScanButton">Start Scan</button-->
             <video id="qrScanner"></video>
            
            <button class="message-button" onclick="hideDWSWindow('QRReaderWindow')">Close</button>
@@ -58,7 +58,7 @@
                   <button type="submit" style="height:43px; padding:20px; border:5px; font-size: 16px;" class="icon-button" id="getAccount" data-action="getAccount" type="button">
                     <i class="fas fa-search"></i>
                  </button>
-                  <button type="button" onclick="showDWSWindow('QRReaderWindow')" style="height:43px; padding:20px; border:5px; font-size: 16px;" class="icon-button" id="getAccountQR" data-action="getAccountQR" type="button">
+                  <button type="button"  id="startScanButton" style="height:43px; padding:20px; border:5px; font-size: 16px;" class="icon-button" id="getAccountQR" data-action="getAccountQR" type="button">
                     <i class="fas fa-qrcode"></i>
                  </button>
               </div>
@@ -206,12 +206,14 @@
 
       // Listen for a successful scan
         scanner.addListener('scan', function (content) {
-        document.getElementById('qrDataInput').value = content;
+        document.getElementById('meternumber').value = content;
         scanner.stop();
+        hideDWSWindow('QRReaderWindow');
       });
     
       // Trigger the scanning process when the button is clicked
       document.getElementById('startScanButton').addEventListener('click', function () {
+        showDWSWindow('QRReaderWindow');
         Instascan.Camera.getCameras()
           .then(function (cameras) {
             if (cameras.length > 0) {
