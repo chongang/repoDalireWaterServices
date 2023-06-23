@@ -203,7 +203,8 @@
   // JavaScript
   let scanner;
   let currentCamera;
-
+  var nextCameraIndex = 0;
+  
   // Find the rear camera
   function findRearCamera(cameras) {
     return cameras.find(function (camera) {
@@ -232,7 +233,7 @@
           currentCamera = findRearCamera(cameras) || cameras[0];
           alert("current camera:" + currentCamera.id);
               for (let c = 0; c < (cameras.length - 1); c++) {
-                alert("current camera:" + cameras[c].facing);
+                console.log(cameras[c]));
               }
           initScanner(currentCamera);
           document.getElementById('toggleCameraButton').disabled = false;
@@ -249,11 +250,14 @@
   document.getElementById('toggleCameraButton').addEventListener('click', function () {
     Instascan.Camera.getCameras()
       .then(function (cameras) {
-        const nextCameraIndex = (cameras.findIndex(function (camera) {
-          return camera.id === currentCamera.id;
-        }) + 1) % cameras.length;
-
+        //const nextCameraIndex = (cameras.findIndex(function (camera) {
+        //  return camera.id === currentCamera.id;
+       // }) + 1) % cameras.length;
+        if (nextCameraIndex > (cameras.length -1)){
+          nextCameraIndex = 0;
+        }
         currentCamera = cameras[nextCameraIndex];
+        nextCameraIndex = (nextCameraIndex + 1);
         scanner.stop();
         initScanner(currentCamera);
       })
