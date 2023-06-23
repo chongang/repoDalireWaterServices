@@ -231,7 +231,7 @@
           alert("camera count:" + cameras.length);
           currentCamera = findRearCamera(cameras) || cameras[0];
           alert("current camera:" + currentCamera.id);
-              for (let c = 0; i < (cameras.length - 1); i++) {
+              for (let c = 0; c < (cameras.length - 1); i++) {
                 alert("current camera:" + cameras[c].facing);
               }
           initScanner(currentCamera);
