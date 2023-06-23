@@ -32,7 +32,6 @@
             <input type="text" id="qrDataInput" />
             <button id="startScanButton">Start Scan</button>
             <video id="qrScanner"></video>
-          
            
            <button class="message-button" onclick="hideDWSWindow('QRReaderWindow')">Close</button>
         </div>
@@ -203,11 +202,10 @@
     <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
     <script>
       // JavaScript
-      const scanner = new Instascan.Scanner({ video: document.getElementById('qrScanner'), mirror: true });
-     // const scanner = new Instascan.Scanner({ video: videoElement, mirror: true }); // Set mirror option to true
+      const scanner = new Instascan.Scanner({ video: document.getElementById('qrScanner'), mirror: false });
 
       // Listen for a successful scan
-      scanner.addListener('scan', function (content) {
+        scanner.addListener('scan', function (content) {
         document.getElementById('qrDataInput').value = content;
         scanner.stop();
       });
