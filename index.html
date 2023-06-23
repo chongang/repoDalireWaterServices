@@ -200,6 +200,13 @@
   let scanner;
   let currentCamera;
 
+  // Find the rear camera
+  function findRearCamera(cameras) {
+    return cameras.find(function (camera) {
+      return camera.facing === 'environment';
+    });
+  }
+
   // Initialize the scanner
   function initScanner(camera) {
     scanner = new Instascan.Scanner({ video: document.getElementById('qrScanner'), mirror: false });
@@ -215,7 +222,7 @@
     Instascan.Camera.getCameras()
       .then(function (cameras) {
         if (cameras.length > 0) {
-          currentCamera = cameras[0];
+          currentCamera = findRearCamera(cameras) || cameras[0];
           initScanner(currentCamera);
           document.getElementById('toggleCameraButton').disabled = false;
         } else {
