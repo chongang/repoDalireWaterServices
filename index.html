@@ -232,7 +232,7 @@
           currentCamera = findRearCamera(cameras) || cameras[0];
           alert("current camera:" + currentCamera.id);
               for (let c = 0; i < (cameras.length - 1); i++) {
-                alert("current camera:" + currentCamera.facing);
+                alert("current camera:" + cameras[c].facing);
               }
           initScanner(currentCamera);
           document.getElementById('toggleCameraButton').disabled = false;
