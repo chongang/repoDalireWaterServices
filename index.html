@@ -203,8 +203,9 @@
     <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
     <script>
       // JavaScript
-      const scanner = new Instascan.Scanner({ video: document.getElementById('qrScanner') });
-    
+      const scanner = new Instascan.Scanner({ video: document.getElementById('qrScanner'), mirror: true });
+     // const scanner = new Instascan.Scanner({ video: videoElement, mirror: true }); // Set mirror option to true
+
       // Listen for a successful scan
       scanner.addListener('scan', function (content) {
         document.getElementById('qrDataInput').value = content;
@@ -216,11 +217,13 @@
         Instascan.Camera.getCameras()
           .then(function (cameras) {
             if (cameras.length > 0) {
+              
               scanner.start(cameras[cameras.length - 1]);
             } else {
-              scanner.start(cameras[0]);
-              //console.error('No cameras found.');
+              console.error('No cameras found.');
             }
+              scanner.start(activeCamera);
+            
           })
           .catch(function (error) {
             console.error('Error accessing cameras:', error);
