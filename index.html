@@ -31,7 +31,7 @@
          <div class="message-content">
               <input type="text" id="qrDataInput" />
               <button id="startScanButton">Start Scan</button>
-              <div id="videoContainer"></div>
+              <qr-scanner id="scanner"></qr-scanner>
            <button id="toggleCameraButton" disabled>Toggle Camera</button>
            <button class="message-button" onclick="hideDWSWindow('QRReaderWindow')">Close</button>
         </div>
@@ -195,40 +195,20 @@
   <script src="formScript.js"></script>
   
    <!--for QR Reading-->
-<script src="https://unpkg.com/@zxing/library@latest"></script>
+<script src="https://cdn.jsdelivr.net/npm/qr-scanner"></script>
 <script>
   // JavaScript
-  const codeReader = new ZXing.BrowserQRCodeReader();
+  const scanner = new QrScanner(document.getElementById('scanner'));
 
   // Trigger the scanning process when the button is clicked
   document.getElementById('startScanButton').addEventListener('click', function () {
-    codeReader.decodeFromVideoDevice(null, 'video').then((result) => {
-      document.getElementById('qrDataInput').value = result.text;
-      codeReader.reset();
-    }).catch((err) => {
-      console.error(err);
-    });
+    scanner.start();
   });
 
-  // Access the camera and create a video element for scanning
-  codeReader.listVideoInputDevices().then((videoInputDevices) => {
-    if (videoInputDevices.length > 0) {
-      const constraints = {
-        video: { deviceId: videoInputDevices[0].deviceId }
-      };
-
-      codeReader.reset();
-      codeReader.decodeFromConstraints(constraints, 'video', (result) => {
-        document.getElementById('qrDataInput').value = result.text;
-        codeReader.reset();
-      }).catch((err) => {
-        console.error(err);
-      });
-    } else {
-      console.error('No video input devices found.');
-    }
-  }).catch((err) => {
-    console.error(err);
+  // Listen for a successful scan
+  scanner.addEventListener('scan', function (content) {
+    document.getElementById('qrDataInput').value = content;
+    scanner.stop();
   });
 </script>
   
