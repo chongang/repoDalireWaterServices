@@ -221,6 +221,8 @@
 
   // Trigger the scanning process when the button is clicked
   document.getElementById('startScanButton').addEventListener('click', function () {
+    alert("camera count:" + cameras.length);
+    alert("current camera:" + currentCamera.id);
     Instascan.Camera.getCameras()
       .then(function (cameras) {
         if (cameras.length > 0) {
