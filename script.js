@@ -17,7 +17,7 @@ function submitForm(a){
 
   alert("action :" + action);
   alert("aaaaaa :" + a);
-    if (action == 'undefined'){
+    if (action === undefined){
         alert("function is changed");
         action = a;
     }
