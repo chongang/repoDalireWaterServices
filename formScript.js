@@ -24,6 +24,20 @@ function initForm(){
   
  // alert("initialized");
 }
+function setReadOnlyElementValue(e, v){
+  // Assuming 'lockedElement' is the locked element you want to change
+  var lockedElement = document.getElementById(e);
+ 
+  // Remove the readonly attribute
+  lockedElement.removeAttribute('readonly');
+  
+  // Update the value
+  lockedElement.value = 'New Value';
+  
+  // Restore the readonly attribute
+  lockedElement.setAttribute('readonly', 'true');
+}
+
 
 function showTab(tabName) {
   // Hide all tab contents
@@ -99,12 +113,19 @@ function setValue(elementId,elementValue) {
   }
 }
 
+function clearAllData(){
+ 
+}
+
+
 function showDWSMessageBox(message) {
   var messageBox = document.getElementById("customMessageBox");
   var messageText = document.getElementById("messageText");
   messageText.textContent = message;
   messageBox.style.display = "flex";
 }
+
+
 
 function showDWSWindow(e) {
   var messageBox = document.getElementById(e);
