@@ -13,8 +13,8 @@ function submitForm(){
       
     var meterno = $('#meternumberbase').val() + $('#meternumber').val();
     var clickedButton = $(document.activeElement);
-  alert(clickedButton.id);
     var action = clickedButton.data("action");
+    alert("action:" + action);
     var terminateExecution = false;
     
       // check if meter number has been saved previously
