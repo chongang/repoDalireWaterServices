@@ -205,17 +205,13 @@
   <!--for QR Reading-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
-  <script src="scriptQR.js"></script>
-   
-    <!-- HTML -->
+  <!--script src="scriptQR.js"></script-->
 
-    
 
     <script>
       // JavaScript
-    //  const scanner = new Instascan.Scanner({ video: document.getElementById('qrScanner'), mirror: false });
-    </script>
-    <!--
+      const scanner = new Instascan.Scanner({ video: document.getElementById('qrScanner'), mirror: false });
+    
       // Listen for a successful scan
         scanner.addListener('scan', function (content) {
         document.getElementById('meternumber').value = content;
@@ -241,7 +237,7 @@
             console.error('Error accessing cameras:', error);
           });
       });
-    </script-->
+    </script>
   
 </body>
 </html>
