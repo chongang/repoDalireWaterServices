@@ -93,25 +93,17 @@ function calcCBM(){
     saveReading.disabled = false;
   }
   
- var cbm = (curmonth-prvmonth)
- var cost = (cbm*cbmrate)
+ var cbm = (curmonth-prvmonth;
+ var cost = (cbm*cbmrate);
  
  //set values
-  document.getElementById("cbm").value = cbm;
-  document.getElementById("cost").value = cost;
- //setValue("cbm",cbm);
- //setValue("cost",cost);
- // document.getElementById("calculateCBM").disabled = true;
+ // document.getElementById("cbm").value = cbm;
+ // document.getElementById("cost").value = cost;
+
+   setReadOnlyElementValue("cbm",cbm);
+   setReadOnlyElementValue("cost",cost);
 }
 
-function setValue(elementId,elementValue) {
-  var element = document.getElementById(elementId);
-  if (element.readOnly) {
-    element.readOnly = false;
-    element.value = elementValue;
-    element.readOnly = true;
-  }
-}
 
 function clearAllData(){
  
