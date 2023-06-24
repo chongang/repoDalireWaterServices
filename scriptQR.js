@@ -1,6 +1,6 @@
       // JavaScript
       // have the const scanner.. in the hmtl doc, where the qrScanner element is located
-      const scanner = null;
+      let scanner = null;
       // Listen for a successful scan
         scanner.addListener('scan', function (content) {
         document.getElementById('meternumber').value = content;
