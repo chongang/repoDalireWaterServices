@@ -1,7 +1,6 @@
       // JavaScript
       // have the const scanner.. in the hmtl doc, where the qrScanner element is located
-      //const scanner = new Instascan.Scanner({ video: document.getElementById('qrScanner'), mirror: false });
-
+      const scanner = null;
       // Listen for a successful scan
         scanner.addListener('scan', function (content) {
         document.getElementById('meternumber').value = content;
@@ -11,6 +10,8 @@
     
       // Trigger the scanning process when the button is clicked
       document.getElementById('startScanButton').addEventListener('click', function () {
+      scanner = new Instascan.Scanner({ video: document.getElementById('qrScanner'), mirror: false });
+
         showDWSWindow('QRReaderWindow');
         Instascan.Camera.getCameras()
           .then(function (cameras) {
