@@ -48,20 +48,26 @@
       <br>
     <form id="myForm">
 
-      <label for="meternumber">Meter No.:</label>
       
       <table>
         <tr>
           <td>
+              <label for="meternumber">Meter No.:</label>
+              <input type="text" id="meternumberbase" inputmode="numeric" style="font-weight: bold;border:0px;text-align:right;background:#ffffff;" maxlength="4" value="2109" disabled>
+          </td>
+        </tr>
+        <tr>
+          <td>
             <div style="display:flex;gap:0px">
-                 <input type="text" id="meternumberbase" inputmode="numeric" style="font-weight: bold;border:0px;text-align:right;background:#ffffff;" maxlength="4" value="2109" disabled>
-                  <input type="text" id="meternumber" inputmode="numeric" style="font-weight: bold;border:0px;text-align:left;" maxlength="6" value="00----" required>
+                  <input type="text" id="meternumber" inputmode="numeric" style="font-size:18px ;font-weight: bold;border:0px;text-align:left;" maxlength="6" value="00----" required>
+                <button type="button"  id="startScanButton" style="height:43px; padding:20px; border:5px; font-size: 16px;" class="icon-button" id="getAccountQR" data-action="getAccountQR" type="button">
+                    <i class="fas fa-qrcode"></i>
+                 </button>
+              <br>
                   <button type="submit" style="height:43px; padding:20px; border:5px; font-size: 16px;" class="icon-button" id="getAccount" data-action="getAccount" type="button">
                     <i class="fas fa-search"></i>
                  </button>
-                  <button type="button"  id="startScanButton" style="height:43px; padding:20px; border:5px; font-size: 16px;" class="icon-button" id="getAccountQR" data-action="getAccountQR" type="button">
-                    <i class="fas fa-qrcode"></i>
-                 </button>
+  
               </div>
           </td>
          </tr>
@@ -97,7 +103,6 @@
               <tr>
                 <td colspan="2">
                   <input type="text" id="calcNote" inputmode="numeric"  style="text-align: center;font-size: 8px;width:100%;color:red;display:none;">
-                  <!--button type="button"  class="icon-button" style="width: 100%;" id="calculateCBM" onclick="calcCBM()" disabled><i class="fas fa-calculator"></i>Calculate CBM</button-->
                 </td>
               </tr>
               <tr>
