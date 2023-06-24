@@ -32,7 +32,7 @@ function setReadOnlyElementValue(e, v){
   lockedElement.removeAttribute('readonly');
   
   // Update the value
-  lockedElement.value = 'New Value';
+  lockedElement.value = v;
   
   // Restore the readonly attribute
   lockedElement.setAttribute('readonly', 'true');
@@ -93,7 +93,7 @@ function calcCBM(){
     saveReading.disabled = false;
   }
   
- var cbm = (curmonth-prvmonth;
+ var cbm = (curmonth-prvmonth);
  var cost = (cbm*cbmrate);
  
  //set values
