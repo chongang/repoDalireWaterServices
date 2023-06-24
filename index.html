@@ -8,8 +8,7 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="ref/style.css">
-  
-  <script>
+    <script>
     //initialize the page
     window.onload = function(){
         initForm(); // initialize listeners and preset values
@@ -47,49 +46,50 @@
      </h1>
       <br>
     <form id="myForm">
-
-      
       <table>
         <tr>
           <td>
-              <label for="meternumber">Meter No.:</label>
-              <input type="text" id="meternumberbase" inputmode="numeric" style="font-weight: bold;border:0px;text-align:right;background:#ffffff;" maxlength="4" value="2109" disabled>
+              <label for="meternumber">Meter No.: [2019******]</label>
           </td>
         </tr>
         <tr>
           <td>
             <div style="display:flex;gap:0px">
-                  <input type="text" id="meternumber" inputmode="numeric" style="font-size:18px ;font-weight: bold;border:0px;text-align:left;" maxlength="6" value="00----" required>
-                <button type="button"  id="startScanButton" style="height:43px; padding:20px; border:5px; font-size: 16px;" class="icon-button" id="getAccountQR" data-action="getAccountQR" type="button">
-                    <i class="fas fa-qrcode"></i>
-                 </button>
-              <br>
-                  <button type="submit" style="height:43px; padding:20px; border:5px; font-size: 16px;" class="icon-button" id="getAccount" data-action="getAccount" type="button">
-                    <i class="fas fa-search"></i>
-                 </button>
-  
+                <input type="text" id="meternumberbase" inputmode="numeric" style="font-weight: bold;border:0px;text-align:right;background:#ffffff;" maxlength="4" value="2109" hidden>
+                  <input type="text" id="meternumber" inputmode="numeric" style="letter-spacing: .5rem; font-size:28px ;font-weight: bold;border:0px;text-align:center;" maxlength="6" value="00____" required>
               </div>
+              <div style="display:flex;gap:0px">
+                <button style="width:50%; margin: 10px;" type="button"  class="icon-button" id="startScanButton"  type="button">
+                  <i class="fas fa-qrcode"></i>
+               </button>
+                <button style="width:50%; margin: 10px;" type="submit" class="icon-button" id="getAccount" data-action="getAccount" type="button">
+                  <i class="fas fa-search"></i>
+               </button>
+            </div>
           </td>
          </tr>
        </table>
-        
+
+
       <label for="name">Account Name:</label>
       <input type="text" class="inputfixed" style="text-align: center;font-weight: bold;" id="name" name="name" placeholder="<Meter No. Required>">
      <div class="form-scroll">
-        <ul class="tab-navigation">
+        <!--ul class="tab-navigation">
           <li><a href="#" onclick="showTab('tab1')" class="tab-link active"><i class="fas fa-tachometer-alt"></i></a></li>
           <li><a href="#" onclick="showTab('tab2')" class="tab-link"><i class="fas fa-comment"></i></a></li>
           <li><a href="#" onclick="showTab('tab3')" class="tab-link"><i class="fas fa-user"></i></a></li>
-        </ul>
+        </ul-->
       
-        <div id="tab1" class="tab-content">
+        <div id="tab1x" class="tab-contentx">
           <table>
               <tr>
                 <td>
                   <label for="prvmonth">Previous:</label>
                 </td>
                 <td>
-                  <input type="text" class="inputfixed" style="border:0px;" id="prvmonth" inputmode="numeric"  maxlength="5" value="00000">
+                  <!--input type="text" class="inputfixed" style="border:0px;" id="prvmonth" inputmode="numeric"  maxlength="5" value="00000"-->
+                  <input type="text" id="inputfixed" inputmode="numeric" style="letter-spacing: .5rem; font-size:28px ;font-weight: bold;border:0px;text-align:center;color:gray;" maxlength="5" value="00000" required>
+
                 </td>
               </tr>
               <tr>
@@ -97,7 +97,9 @@
                   <label for="curmonth">Current:</label>
                 </td>
                 <td>
-                  <input type="text" id="curmonth" inputmode="numeric"  style="text-align: center;font-weight: bold;" maxlength="5" value="00000">
+                  <!--input type="text" id="curmonth" inputmode="numeric"  style="text-align: center;font-weight: bold;" maxlength="5" value="00000"-->
+                  <input type="text" id="curmonth" inputmode="numeric" style="letter-spacing: .5rem; font-size:28px ;font-weight: bold;border:0px;text-align:center;" maxlength="5" value="00000" required>
+
                 </td>
               </tr>
               <tr>
@@ -139,14 +141,14 @@
           
         </div>
 
-        <div id="tab2" class="tab-content">
+        <div id="tab2" class="tab-content" hidden>
           <label for="input2">Remarks</label>
           <br>
           <textarea id="remarks"  class="inputfixed" style="text-align: left; width:100%; height:100px;" name="remarks" placeholder="<Write your remarks here>"></textarea>
           <button type="submit" id="saveRemarks" style="width:100%;" data-action="saveRemarks"> <i class="fas fa-save"></i> Save Remarks</button>
         </div>
 
-        <div id="tab3" class="tab-content">
+        <div id="tab3" class="tab-content" hidden>
           
           
             <table>
@@ -236,10 +238,6 @@
           });
       });
     </script>
-
-
- 
   
 </body>
 </html>
-
