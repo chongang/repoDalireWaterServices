@@ -21,7 +21,7 @@
             } else {
               console.error('No cameras found.');
             }
-              scanner.start(activeCamera);
+             // scanner.start(activeCamera);
             
           })
           .catch(function (error) {
