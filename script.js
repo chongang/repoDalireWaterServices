@@ -5,7 +5,12 @@ $(document).ready(function() {
   //For button event form App
   $("#myForm").on("submit",function(event){
     event.preventDefault(); // Prevent the form from submitting normally
-    
+      submitForm();
+  });
+});
+
+function submitForm(){
+      
     var meterno = $('#meternumberbase').val() + $('#meternumber').val();
     var clickedButton = $(document.activeElement);
     var action = clickedButton.data("action");
@@ -43,7 +48,6 @@ $(document).ready(function() {
     url += "?function=" + action;
     url += "&" + $.param(formData);
 
-//alert("completed var params");
     $.ajax({
       url: url,
       dataType: "jsonp",
@@ -55,9 +59,7 @@ $(document).ready(function() {
       }
     });
     
-  });
-});
-
+}
 function handleResponse(response,action) {
   // Your code here to handle the response
 //  Object.entries(response).forEach(function([key, value]) {
