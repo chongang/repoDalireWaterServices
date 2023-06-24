@@ -15,10 +15,8 @@ function submitForm(a){
     var clickedButton = $(document.activeElement);
     var action = clickedButton.data("action");
 
-  alert("action :" + action);
-  alert("aaaaaa :" + a);
     if (action === undefined){
-        alert("function is changed");
+        //replace value of action with parameter  input
         action = a;
     }
     var terminateExecution = false;
