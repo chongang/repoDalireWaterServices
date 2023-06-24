@@ -9,12 +9,18 @@ $(document).ready(function() {
   });
 });
 
-function submitForm(){
+function submitForm(a){
       
     var meterno = $('#meternumberbase').val() + $('#meternumber').val();
     var clickedButton = $(document.activeElement);
     var action = clickedButton.data("action");
-    alert("action:" + action);
+
+  alert("action :" + action);
+  alert("aaaaaa :" + a);
+    if (action === 'undefined'){
+        alert("function is changed");
+        action = a;
+    }
     var terminateExecution = false;
     
       // check if meter number has been saved previously
