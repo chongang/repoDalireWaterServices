@@ -1,5 +1,6 @@
       // JavaScript
-      const scanner = new Instascan.Scanner({ video: document.getElementById('qrScanner'), mirror: false });
+      // have the const scanner.. in the hmtl doc, where the qrScanner element is located
+      //const scanner = new Instascan.Scanner({ video: document.getElementById('qrScanner'), mirror: false });
 
       // Listen for a successful scan
         scanner.addListener('scan', function (content) {
