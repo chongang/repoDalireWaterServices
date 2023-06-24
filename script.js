@@ -13,6 +13,7 @@ function submitForm(){
       
     var meterno = $('#meternumberbase').val() + $('#meternumber').val();
     var clickedButton = $(document.activeElement);
+  alert(clickedButton.id);
     var action = clickedButton.data("action");
     var terminateExecution = false;
     
