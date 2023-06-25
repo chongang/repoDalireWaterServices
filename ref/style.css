@@ -37,7 +37,10 @@ body {
   
   width: 100%;
   display: flex;
-
+  background-image: url('bg.png'); /* Replace with the path to your image */
+  background-size: cover; /* Adjust the background size as needed */
+  background-position: center bottom; /* Set the vertical alignment to bottom */
+  backdrop-filter: blur(8px); /* Apply the blur effect */
     /*
   background-image: linear-gradient(30deg, #00b8f1, #00b8f1,#4ec9f5,#4ec9f5,#4ec9f5,  #b1e3fa,#b1e3fa,#b1e3fa,#b1e3fa,  #ffffff,#ffffff,#ffffff,#ffffff,#ffffff);
   font-color:#237fa5;
@@ -66,9 +69,6 @@ form {
   width: 100%;
   height: 100%;
   overflow:auto;
-  background-image: url('bg.png'); /* Replace with the path to your image */
-  background-size: cover; /* Adjust the background size as needed */
-  background-position: bottom; /* Adjust the background position as needed */
 }
 
 label {
