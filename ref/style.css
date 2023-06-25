@@ -38,8 +38,9 @@ body {
   
   width: 100%;
   hight: 100%;
-  background-color: #f1f1f1;
-  
+ /*background-color: #f1f1f1;*/
+  background-color: #95bae4; /* For browsers that do not support gradients */
+  background-image: linear-gradient(180deg, #222cfd, #95bae4, #ececec);
 }
 
 .form-scroll {
