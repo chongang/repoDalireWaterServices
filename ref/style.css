@@ -47,10 +47,11 @@ body {
   background-position: bottom; /* Adjust the background position as needed */
 }
 
-
+/*
 .form-scroll {
   max-height: calc(100vh - 20px); /* Subtract padding or adjust as needed */
   overflow-y: auto;
+*/
 }
 
 
@@ -64,6 +65,9 @@ h1 {
 form {
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow:auto;
 }
 
 label {
