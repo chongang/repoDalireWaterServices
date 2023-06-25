@@ -40,7 +40,7 @@ body {
   height: 100%;
 
   
-  background-color: #eefbeb; /* For browsers that do not support gradients */
+  background-color: white; /* For browsers that do not support gradients */
   /*
   background-image: linear-gradient(30deg, #00b8f1, #00b8f1,#4ec9f5,#4ec9f5,#4ec9f5,  #b1e3fa,#b1e3fa,#b1e3fa,#b1e3fa,  #ffffff,#ffffff,#ffffff,#ffffff,#ffffff);
 
@@ -48,7 +48,7 @@ body {
 */
    background-image: url('bg.png'); /* Replace with the path to your image */
   background-size: cover; /* Adjust the background size as needed */
-  background-position: center; /* Adjust the background position as needed */
+  background-position: bottom; /* Adjust the background position as needed */
 }
 
 
