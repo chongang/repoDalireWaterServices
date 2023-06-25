@@ -105,20 +105,21 @@
                 </td>
               </tr>
          </table>
+<div style="max-height: 50px; overflow: auto;">
+           <table style="table-layout: fixed;">
+            <tr>
+              <td> <a for="cbmrate">PhP/CBM:</a></td>
+              <td> <input type="text" class="inputfixed" style="border:0px; text-align:right;" id="cbmrate" inputmode="numeric" value="0.00" readonly></td>
+              
+              <td><a for="cbm">CBM</a></td>
+              <td><input type="text" class="inputfixed" style="font-weight: bold;border:0px;text-align:right;" id="cbm" inputmode="numeric" name="cbm" value="0.00" readonly></td>
 
-          <div>
-                  <a for="cbmrate">PhP/CBM:</a>
-                  <input type="text" class="inputfixed" style="border:0px; text-align:right;" id="cbmrate" inputmode="numeric" value="0.00" readonly>
-
-                  <a for="cbm">CBM</a>
-                  <input type="text" class="inputfixed" style="font-weight: bold;border:0px;text-align:right;" id="cbm" inputmode="numeric" name="cbm" value="0.00" readonly>
-
-                  <a for="cost">Cost:</a>
-                  <input type="text" class="inputfixed" style="font-weight: bold;border:0px;text-align:right;" id="cost" inputmode="numeric" name="cost" value="0.00" readonly>
+              <td><a for="cost">Cost:</a></td>
+              <td><input type="text" class="inputfixed" style="font-weight: bold;border:0px;text-align:right;" id="cost" inputmode="numeric" name="cost" value="0.00" readonly></td>
+          <table>
           <button type="submit"  class="icon-button" style="width: 100%;" id="saveReading" data-action="saveReading" disabled><i class="fas fa-save"></i> Save Reading</button>
-
-          </div>
-
+          </table>
+</div>
           
         </div>
 
