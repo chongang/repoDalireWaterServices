@@ -207,7 +207,7 @@
         scanner.addListener('scan', function (content) {
         var dwsmeternumber = validateDWSM(content);
 
-        if (dwsm !== 'invalid'){
+        if (dwsmeternumber !== 'invalid'){
           document.getElementById('meternumber').value = dwsmeternumber;
           scanner.stop();
           hideDWSWindow('QRReaderWindow');
