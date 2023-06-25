@@ -38,10 +38,13 @@ body {
   
   width: 100%;
   hight: 100%;
- /*background-color: #f1f1f1;*/
-  background-color: #95bae4; /* For browsers that do not support gradients */
-  background-image: linear-gradient(180deg, #222cfd, #95bae4, #ececec);
+
+  background-color: #eefbeb; /* For browsers that do not support gradients */
+  background-image: linear-gradient(180deg, #b1e3fa, #4ec9f5, #00b8f1);
+
+  font-color:#237fa5;
 }
+BG: #eefbeb
 
 .form-scroll {
   max-height: calc(100vh - 20px); /* Subtract padding or adjust as needed */
